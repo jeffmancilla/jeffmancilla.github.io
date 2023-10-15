@@ -66,9 +66,9 @@ const { title } = Astro.props;
   </body>
   <style>
     nav {
-      position: absolute;
       width: 100%;
       border-bottom: 1px solid hsla(var(--text), 0.1);
+	  background-color: hsla(var(--text), 0.1);
     }
     nav * {
       color: hsl(var(--accent-2));
@@ -128,7 +128,7 @@ const { title } = Astro.props;
       font-family: "Ubuntu Mono", monospace;
     }
     body {
-      margin: 0 auto;
+      margin: 0;
     }
   </style>
 </html>
