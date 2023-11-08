@@ -1,96 +1,6 @@
 <script>
-     let data = {
-            items: [
-				{
-            "name": "Boots",
-            "description": "<mainText><stats><attention>25</attention> Move Speed</stats></mainText><br>",
-            "colloq": ";",
-            "plaintext": "Slightly increases Move Speed",
-            "into": [
-                "3005",
-                "3158",
-                "3117",
-                "3047",
-                "3020",
-                "3006",
-                "3009",
-                "3111"
-            ],
-            "image": {
-                "full": "1001.png",
-                "sprite": "item0.png",
-                "group": "item",
-                "x": 0,
-                "y": 0,
-                "w": 48,
-                "h": 48
-            },
-            "gold": {
-                "base": 300,
-                "purchasable": true,
-                "total": 300,
-                "sell": 210
-            },
-            "tags": [
-                "Boots"
-            ],
-            "maps": {
-                "11": true,
-                "12": true,
-                "21": true,
-                "22": false,
-                "30": false
-            },
-            "stats": {
-                "FlatMovementSpeedMod": 25
-            }
-        },
-        {
-            "name": "Faerie Charm",
-            "description": "<mainText><stats><attention>50%</attention> Base Mana Regen</stats></mainText><br>",
-            "colloq": ";",
-            "plaintext": "Slightly increases Mana Regen",
-            "into": [
-                "3012",
-                "3114",
-                "4642"
-            ],
-            "image": {
-                "full": "1004.png",
-                "sprite": "item0.png",
-                "group": "item",
-                "x": 48,
-                "y": 0,
-                "w": 48,
-                "h": 48
-            },
-            "gold": {
-                "base": 250,
-                "purchasable": true,
-                "total": 250,
-                "sell": 175
-            },
-            "tags": [
-                "ManaRegen"
-            ],
-            "maps": {
-                "11": true,
-                "12": true,
-                "21": true,
-                "22": false,
-                "30": false
-            },
-            "stats": {}
-        }
-			],
-            maps: [
-				{
-					mapId: 11,
-					mapName: "Summoner's Rift"
-				}
-			],
-            version: "13.20.1"
-        }
+	import data from "./League.js"
+	console.dir(data)
 
 	let search;
 	let map = 11;
@@ -103,7 +13,7 @@
 		//search filter
 		if (query) {
 			return filteredArray.filter((element) => element.name.toLowerCase().includes(query.toLowerCase()));
-		}
+		}``
 		return filteredArray;
 	}
 

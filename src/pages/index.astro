@@ -1,6 +1,6 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Card from "../components/Card.astro";
+import Layout from '../layouts/Layout.astro'
+import Card from '../components/Card.astro'
 ---
 
 <Layout title="Jeff Mancilla">
@@ -148,14 +148,14 @@ import Card from "../components/Card.astro";
     <h2>Projects</h2>
     <ul role="list" class="link-card-grid">
       <Card
+        href="/mid-typing-game"
+        title="Mid Typing Game"
+        body="Heavily inspired by Souls-like and other typing games. Built with vanilla JS, HTML and CSS!"
+      />
+      <Card
         href="/league"
         title="League Items"
         body="Browse through League of Legends items for the latest NA patch (powered by Svelte)"
-      />
-      <Card
-        href="/recipes"
-        title="Recipes"
-        body="Learn how to fix up some of my favorite dishes"
       />
     </ul>
   </section>
@@ -185,10 +185,10 @@ import Card from "../components/Card.astro";
     margin: 1rem auto;
   }
   .skills svg {
-	margin: 0 0.5rem;
+    margin: 0 0.5rem;
   }
   .wash {
-    filter: opacity(.5);
+    filter: opacity(0.5);
   }
 
   #about {
