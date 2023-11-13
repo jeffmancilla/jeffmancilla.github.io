@@ -1,0 +1,97 @@
+---
+import Layout from '../layouts/Layout.astro'
+---
+
+<script>
+  let currentIndex = null
+  let cast = null
+  let isCasting = false
+
+  const spellDiv = document.querySelector('#spell')
+  const resultDiv = document.querySelector('#result')
+  const bodyEl = document.querySelector('body')
+  const pickStartAudio = document.querySelector('#pickStart')
+  const pickCycleAudio = document.querySelector('#pickCycle')
+  const pickEndAudio = document.querySelector('#pickEnd')
+  const Cards = ['Blue_Card', 'Red_Card', 'Gold_Card']
+
+  const cycleCards = () => {
+    console.log(Cards[currentIndex])
+
+    if (currentIndex === 0) {
+      pickCycleAudio.play()
+      // blue
+      spellDiv.style.backgroundImage = `url(${Cards[0]}.webp)`
+      currentIndex = 1
+    } else if (currentIndex === 1) {
+      // red
+      spellDiv.style.backgroundImage = `url(${Cards[1]}.webp)`
+      currentIndex = 2
+    } else {
+      //gold
+      spellDiv.style.backgroundImage = `url(${Cards[2]}.webp)`
+      currentIndex = 0
+    }
+  }
+  const clearTimers = () => {
+    pickEndAudio.play()
+    clearInterval(cast)
+    currentIndex = 0
+    isCasting = false
+    cast = null
+  }
+
+  const castSpell = () => {
+    if (!isCasting) {
+      pickStartAudio.play()
+      currentIndex = Math.floor(Math.random() * Cards.length)
+      spellDiv.style.backgroundImage = `url(${Cards[currentIndex]}.webp)`
+      setTimeout(() => (isCasting = true), 1)
+      cycleCards()
+      cast = setInterval(cycleCards, 515)
+    }
+    if (isCasting) {
+      console.log(Cards[currentIndex])
+      resultDiv.style.backgroundImage = spellDiv.style.backgroundImage
+      spellDiv.style.backgroundImage = `url(Pick_a_Card.webp)`
+      clearTimers()
+    }
+  }
+
+  spellDiv.style.backgroundImage = `url(Pick_a_Card.webp)`
+
+  spellDiv.addEventListener('click', () => {
+    console.log(`click`)
+    castSpell()
+  })
+
+  bodyEl.addEventListener('keydown', (e) => {
+    // e.preventDefault()
+    if (e.key === 'w') {
+      castSpell()
+    }
+  })
+</script>
+
+<Layout title="Bleu Card">
+  <h2>Pull out the blue cards</h2>
+  <section>
+    <div id="spell"></div>
+    <div id="result"></div>
+    <audio id="pickStart" src="pick_start.ogg" autoplay></audio>
+    <audio id="pickCycle" src="pick_cycle.ogg" autoplay></audio>
+    <audio id="pickEnd" src="pick_end.ogg" autoplay></audio>
+  </section>
+</Layout>
+
+<style>
+  div {
+    width: 4rem;
+    height: 4rem;
+    border: 1px groove gray;
+  }
+  section {
+    display: flex;
+    gap: 1rem;
+  }
+</style>
