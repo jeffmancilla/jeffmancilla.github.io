@@ -6,9 +6,14 @@ import Layout from '../layouts/Layout.astro'
   let currentIndex = null
   let cast = null
   let isCasting = false
+  let repeatCount = 0
+  let interval = 515
+  let ping = 200
 
   const spellDiv = document.querySelector('#spell')
   const resultDiv = document.querySelector('#result')
+  const countSpan = document.querySelector('#repeat')
+  const pingInput = document.querySelector('#ping')
   const bodyEl = document.querySelector('body')
   const pickStartAudio = document.querySelector('#pickStart')
   const pickCycleAudio = document.querySelector('#pickCycle')
@@ -41,30 +46,38 @@ import Layout from '../layouts/Layout.astro'
 
   const castSpell = () => {
     if (!isCasting) {
+      resultDiv.style.animationPlayState = 'unset'
       pickStartAudio.play()
       currentIndex = Math.floor(Math.random() * Cards.length)
       spellDiv.style.backgroundImage = `url('${Cards[currentIndex]}.webp')`
       setTimeout(() => (isCasting = true), 1)
       cycleCards()
-      cast = setInterval(cycleCards, 515)
+      cast = setInterval(cycleCards, interval)
     }
     if (isCasting) {
+      //   repeatCount =
+      //     resultDiv.style.backgroundImage == spellDiv.style.backgroundImage
+      //       ? (repeatCount += 1)
+      //       : 0
+      //   countSpan.innerHTML = `x ${repeatCount}`
       resultDiv.style.backgroundImage = spellDiv.style.backgroundImage
       spellDiv.style.backgroundImage = `url('../Pick_a_Card.webp')`
+
       clearTimers()
     }
   }
 
   spellDiv.style.backgroundImage = `url('../Pick_a_Card.webp')`
+  pingInput.value = ping
 
   spellDiv.addEventListener('click', () => {
-    castSpell()
+    setTimeout(castSpell, pingInput.value)
   })
 
   bodyEl.addEventListener('keydown', (e) => {
     // e.preventDefault()
     if (e.key === 'w') {
-      castSpell()
+      setTimeout(castSpell, pingInput.value)
     }
   })
 </script>
@@ -73,13 +86,18 @@ import Layout from '../layouts/Layout.astro'
   <main>
     <h2>Pull out the blue cards</h2>
     <section>
+      <label for="ping">Ping (ms)</label>
+      <input type="number" name="ping" id="ping" value="200" />
+    </section>
+    <section>
       <div id="spell"></div>
       <div id="result"></div>
-      <audio id="pickStart" src="../pick_start.ogg" autoplay></audio>
-      <audio id="pickCycle" src="../pick_cycle.ogg" autoplay></audio>
-      <audio id="pickEnd" src="../pick_end.ogg" autoplay></audio>
+      <span id="repeat"></span>
     </section>
   </main>
+  <audio id="pickStart" src="../pick_start.ogg" autoplay></audio>
+  <audio id="pickCycle" src="../pick_cycle.ogg" autoplay></audio>
+  <audio id="pickEnd" src="../pick_end.ogg" autoplay></audio>
 </Layout>
 
 <style>
@@ -93,7 +111,20 @@ import Layout from '../layouts/Layout.astro'
   #result {
     width: 4rem;
     height: 4rem;
-    border: 1px groove gray;
+    border: 1px groove currentColor;
+  }
+  #result {
+    animation-name: flash;
+    animation-duration: 0.3s;
+    animation-play-state: paused;
+  }
+  @keyframes flash {
+    25% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
   }
   section {
     display: flex;
