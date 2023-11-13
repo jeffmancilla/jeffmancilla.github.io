@@ -46,7 +46,6 @@ import Layout from '../layouts/Layout.astro'
 
   const castSpell = () => {
     if (!isCasting) {
-      resultDiv.style.animationPlayState = 'unset'
       pickStartAudio.play()
       currentIndex = Math.floor(Math.random() * Cards.length)
       spellDiv.style.backgroundImage = `url('${Cards[currentIndex]}.webp')`
