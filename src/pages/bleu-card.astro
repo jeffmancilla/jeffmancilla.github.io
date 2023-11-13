@@ -21,15 +21,15 @@ import Layout from '../layouts/Layout.astro'
     if (currentIndex === 0) {
       pickCycleAudio.play()
       // blue
-      spellDiv.style.backgroundImage = `url(${Cards[0]}.webp)`
+      spellDiv.style.backgroundImage = `url('../${Cards[0]}.webp')`
       currentIndex = 1
     } else if (currentIndex === 1) {
       // red
-      spellDiv.style.backgroundImage = `url(${Cards[1]}.webp)`
+      spellDiv.style.backgroundImage = `url('../${Cards[1]}.webp')`
       currentIndex = 2
     } else {
       //gold
-      spellDiv.style.backgroundImage = `url(${Cards[2]}.webp)`
+      spellDiv.style.backgroundImage = `url('../${Cards[2]}.webp')`
       currentIndex = 0
     }
   }
@@ -45,7 +45,7 @@ import Layout from '../layouts/Layout.astro'
     if (!isCasting) {
       pickStartAudio.play()
       currentIndex = Math.floor(Math.random() * Cards.length)
-      spellDiv.style.backgroundImage = `url(${Cards[currentIndex]}.webp)`
+      spellDiv.style.backgroundImage = `url('${Cards[currentIndex]}.webp')`
       setTimeout(() => (isCasting = true), 1)
       cycleCards()
       cast = setInterval(cycleCards, 515)
@@ -53,12 +53,12 @@ import Layout from '../layouts/Layout.astro'
     if (isCasting) {
       console.log(Cards[currentIndex])
       resultDiv.style.backgroundImage = spellDiv.style.backgroundImage
-      spellDiv.style.backgroundImage = `url(Pick_a_Card.webp)`
+      spellDiv.style.backgroundImage = `url('../Pick_a_Card.webp')`
       clearTimers()
     }
   }
 
-  spellDiv.style.backgroundImage = `url(Pick_a_Card.webp)`
+  spellDiv.style.backgroundImage = `url('../Pick_a_Card.webp')`
 
   spellDiv.addEventListener('click', () => {
     console.log(`click`)
@@ -78,7 +78,7 @@ import Layout from '../layouts/Layout.astro'
   <section>
     <div id="spell"></div>
     <div id="result"></div>
-    <audio id="pickStart" src="pick_start.ogg" autoplay></audio>
+    <audio id="pickStart" src="./pick_start.ogg" autoplay></audio>
     <audio id="pickCycle" src="pick_cycle.ogg" autoplay></audio>
     <audio id="pickEnd" src="pick_end.ogg" autoplay></audio>
   </section>
