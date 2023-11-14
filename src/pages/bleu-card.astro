@@ -3,22 +3,23 @@ import Layout from '../layouts/Layout.astro'
 ---
 
 <script>
+  const Cards = ['Blue_Card', 'Red_Card', 'Gold_Card']
+
   let currentIndex = null
   let cast = null
   let isCasting = false
-  let repeatCount = 0
   let interval = 515
-  let ping = 200
+  let ping = 100
 
   const spellDiv = document.querySelector('#spell')
   const resultDiv = document.querySelector('#result')
   const countSpan = document.querySelector('#repeat')
   const pingInput = document.querySelector('#ping')
   const bodyEl = document.querySelector('body')
+
   const pickStartAudio = document.querySelector('#pickStart')
   const pickCycleAudio = document.querySelector('#pickCycle')
   const pickEndAudio = document.querySelector('#pickEnd')
-  const Cards = ['Blue_Card', 'Red_Card', 'Gold_Card']
 
   const cycleCards = () => {
     pickCycleAudio.play()
@@ -87,7 +88,7 @@ import Layout from '../layouts/Layout.astro'
     <sub>(click or press W to cast)</sub>
     <section>
       <label for="ping">Ping (ms)</label>
-      <input type="number" name="ping" id="ping" value="200" />
+      <input type="number" name="ping" id="ping" />
     </section>
     <section>
       <div id="spell"></div>
