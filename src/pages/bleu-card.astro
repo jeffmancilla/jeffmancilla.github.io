@@ -39,7 +39,7 @@ import Layout from '../layouts/Layout.astro'
   }
   const clearTimers = () => {
     pickEndAudio.play()
-    clearInterval(cast)
+    clearInterval(cast) 
     currentIndex = 0
     isCasting = false
     cast = null
@@ -93,8 +93,8 @@ import Layout from '../layouts/Layout.astro'
     <section>
       <div id="spell"></div>
       <div id="result"></div>
-      <span id="repeat"></span>
     </section>
+    <!-- <span id="repeat"></span> -->
   </main>
   <audio id="pickStart" src="../pick_start.ogg" autoplay></audio>
   <audio id="pickCycle" src="../pick_cycle.ogg" autoplay></audio>
@@ -106,29 +106,21 @@ import Layout from '../layouts/Layout.astro'
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2rem;
+    gap: 1rem;
+  }
+  section {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
   }
   #spell,
   #result {
     width: 4rem;
     height: 4rem;
-    border: 1px groove currentColor;
+    border: 1px solid currentColor;
   }
-  /* #result {
-    animation-name: flash;
-    animation-duration: 0.3s;
-    animation-play-state: paused;
-  } */
-  @keyframes flash {
-    25% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
+  #ping {
+    width: 4rem;
   }
-  section {
-    display: flex;
-    gap: 1rem;
-  }
+
 </style>
