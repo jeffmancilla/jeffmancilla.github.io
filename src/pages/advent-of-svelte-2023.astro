@@ -1,0 +1,9 @@
+---
+import Layout from '../layouts/main.astro'
+import Day1 from '../components/advent-of-svelte-2023/Day1.svelte'
+import AdventOfSvelte from '../components/advent-of-svelte-2023/AdventOfSvelte.svelte'
+---
+
+<Layout title="Advent of Svelte">
+	<AdventOfSvelte client:only="svelte" />
+</Layout>

@@ -6,6 +6,10 @@ const navItems = [
 		href: '/#projects',
 		innerHTML: 'Projects',
 	},
+	{
+		href: '/advent-of-svelte-2023',
+		innerHTML: 'Advent of Svelte',
+	},
 ]
 ---
 
@@ -77,28 +81,40 @@ const navItems = [
 		margin: 0;
 		margin-bottom: 1rem;
 	}
+	section {
+		margin-bottom: 1rem;
+	}
 </style>
 
 <style>
 	body {
 		margin: auto;
 		width: min(90vw, 70ch);
+		height: 100dvh;
+
+		display: flex;
+		flex-direction: column;
+
+		& > :is(header, main, footer) {
+			padding: 1rem;
+		}
+		& header {
+			padding-bottom: 0;
+		}
+		& main {
+			flex-grow: 1;
+		}
+		& footer {
+			padding-top: 0;
+			text-align: center;
+		}
 	}
-	header,
-	main,
-	footer {
-		padding: 1rem;
-	}
-    header {
-        padding-bottom: 0;
-    }
-    footer {
-        padding-top: 0;
-    }
+
 	nav {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+        
 		border-bottom: 1px solid color-mix(in srgb, currentColor 20%, transparent);
 
 		& div:last-of-type {
@@ -111,15 +127,13 @@ const navItems = [
 			text-decoration: none;
 			color: var(--text);
 			line-height: 1rem;
+			font-weight: 400;
+			opacity: 0.8;
 			& img {
 				height: 1rem;
 				margin-right: 0.25rem;
 				border-radius: 1rem;
 			}
-		}
-		& > :not(a:first-of-type) {
-			font-weight: 400;
-			opacity: 0.8;
 			&:hover {
 				opacity: 1;
 				font-weight: 600;
@@ -127,6 +141,10 @@ const navItems = [
 			& :visited {
 				color: var(--text);
 			}
+		}
+		&:first-child > a {
+			opacity: 1;
+			font-weight: 600;
 		}
 	}
 </style>
