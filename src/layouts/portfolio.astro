@@ -4,11 +4,15 @@ const { title } = Astro.props
 const navItems = [
 	{
 		href: '/#projects',
-		innerHTML: 'Projects',
+		text: 'Projects',
 	},
 	{
 		href: '/advent-of-svelte-2023',
-		innerHTML: 'Advent of Svelte',
+		text: 'Advent of Svelte',
+	},
+	{
+		href: '/palette',
+		text: 'Palette',
 	},
 ]
 ---
@@ -24,11 +28,11 @@ const navItems = [
 	<body>
 		<header>
 			<nav>
-				<a href="/"><img src="./assets/jeffm-logo.png" /> JeffM</a>
+				<a href="/">JeffM .</a>
 				<div>
 					{
 						navItems.map((item) => {
-							return <a href={item.href}>{item.innerHTML}</a>
+							return <a href={item.href}>{item.text}</a>
 						})
 					}
 				</div>
@@ -37,7 +41,7 @@ const navItems = [
 		<main>
 			<slot />
 		</main>
-		<footer>footer</footer>
+		<footer>Built with Astro</footer>
 	</body>
 </html>
 
@@ -45,10 +49,12 @@ const navItems = [
 	@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
 
 	:root {
-		--dark: hsl(0, 0%, 5%);
-		--light: hsl(0, 0%, 95%);
-		--accent-1: hsl(240, 100%, 50%);
-		--accent-2: hsl(0, 75%, 50%);
+		--dark: hsl(0, 0%, 15%);
+		--light: hsla(0, 0%, 100%, 0.85);
+		--accent-1: #3f7cac;
+		--accent-2: #6a8eae;
+		--humanist: Seravek, 'Gill Sans Nova', Ubuntu, Calibri, 'DejaVu Sans', source-sans-pro, sans-serif;
+		--classical-humanist: Optima, Candara, 'Noto Sans', source-sans-pro, sans-serif;
 
 		--text: var(--dark);
 		--background: var(--light);
@@ -63,15 +69,15 @@ const navItems = [
 	html {
 		color: var(--text);
 		background: var(--background);
-		font-family: 'Ubuntu', sans-serif;
-	}
-	a {
-		color: color-mix(in lch, var(--text) 50%, var(--accent-1) 50%);
-		&:visited {
-			color: color-mix(in lch, var(--text) 75%, var(--accent-1) 25%);
-		}
-		&:hover {
-			color: color-mix(in lch, var(--text) 75%, var(--accent-1) 25%);
+		font-family: var(--humanist);
+		a {
+			color: color-mix(in lch, var(--text) 50%, var(--accent-1) 50%);
+			&:visited {
+				color: color-mix(in lch, var(--text) 75%, var(--accent-1) 25%);
+			}
+			&:hover {
+				color: color-mix(in lch, var(--text) 75%, var(--accent-1) 25%);
+			}
 		}
 	}
 	h1,
@@ -107,6 +113,8 @@ const navItems = [
 		& footer {
 			padding-top: 0;
 			text-align: center;
+			opacity: .5;
+			font-weight: 300;
 		}
 	}
 
@@ -114,8 +122,7 @@ const navItems = [
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-        
-		border-bottom: 1px solid color-mix(in srgb, currentColor 20%, transparent);
+
 
 		& div:last-of-type {
 			display: flex;
@@ -123,11 +130,10 @@ const navItems = [
 		}
 
 		& a {
-			padding: 0.25rem;
+			padding: 0.5rem;
 			text-decoration: none;
+			font-weight: 300;
 			color: var(--text);
-			line-height: 1rem;
-			font-weight: 400;
 			opacity: 0.8;
 			& img {
 				height: 1rem;
@@ -136,7 +142,6 @@ const navItems = [
 			}
 			&:hover {
 				opacity: 1;
-				font-weight: 600;
 			}
 			& :visited {
 				color: var(--text);
@@ -144,7 +149,7 @@ const navItems = [
 		}
 		&:first-child > a {
 			opacity: 1;
-			font-weight: 600;
+			font-weight: 400;
 		}
 	}
 </style>
