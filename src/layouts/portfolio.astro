@@ -3,13 +3,14 @@ const { title } = Astro.props
 
 const navItems = [
 	{
-		href: '/#projects',
-		text: 'Projects',
+		href: '/',
+		text: 'Home',
 	},
 	{
-		href: '/advent-of-svelte-2023',
-		text: 'Advent of Svelte',
+		href: '/projects',
+		text: 'Projects',
 	},
+
 	{
 		href: '/palette',
 		text: 'Palette',
@@ -28,14 +29,18 @@ const navItems = [
 	<body>
 		<header>
 			<nav>
-				<a href="/">JeffM .</a>
-				<div>
+				<span>JeffM .</span>
+				<ul>
 					{
 						navItems.map((item) => {
-							return <a href={item.href}>{item.text}</a>
+							return (
+								<li>
+									<a href={item.href}>{item.text}</a>
+								</li>
+							)
 						})
 					}
-				</div>
+				</ul>
 			</nav>
 		</header>
 		<main>
@@ -53,8 +58,11 @@ const navItems = [
 		--light: hsla(0, 0%, 100%, 0.85);
 		--accent-1: #3f7cac;
 		--accent-2: #6a8eae;
-		--humanist: Seravek, 'Gill Sans Nova', Ubuntu, Calibri, 'DejaVu Sans', source-sans-pro, sans-serif;
-		--classical-humanist: Optima, Candara, 'Noto Sans', source-sans-pro, sans-serif;
+		--humanist: Seravek, 'Gill Sans Nova', Ubuntu, Calibri, 'DejaVu Sans',
+			source-sans-pro, sans-serif;
+		--classical-humanist: Optima, Candara, 'Noto Sans', source-sans-pro,
+			sans-serif;
+		--ui-rounded: ui-rounded, 'Hiragino Maru Gothic ProN', Quicksand, Comfortaa, Manjari, 'Arial Rounded MT', 'Arial Rounded MT Bold', Calibri, source-sans-pro, sans-serif;
 
 		--text: var(--dark);
 		--background: var(--light);
@@ -69,7 +77,7 @@ const navItems = [
 	html {
 		color: var(--text);
 		background: var(--background);
-		font-family: var(--humanist);
+		font-family: var(--ui-rounded);
 		a {
 			color: color-mix(in lch, var(--text) 50%, var(--accent-1) 50%);
 			&:visited {
@@ -104,52 +112,49 @@ const navItems = [
 		& > :is(header, main, footer) {
 			padding: 1rem;
 		}
-		& header {
-			padding-bottom: 0;
-		}
 		& main {
 			flex-grow: 1;
 		}
 		& footer {
 			padding-top: 0;
 			text-align: center;
-			opacity: .5;
+			opacity: 0.5;
 			font-weight: 300;
 		}
 	}
 
 	nav {
 		display: flex;
+		flex-wrap: wrap;
 		justify-content: space-between;
 		align-items: center;
 
-
-		& div:last-of-type {
+		&:first-child{
+			font-weight: 600;
+		}	
+		& ul {
+			padding-left: 0;
+			list-style: none;
 			display: flex;
 			justify-content: flex-end;
-		}
-
-		& a {
-			padding: 0.5rem;
-			text-decoration: none;
-			font-weight: 300;
-			color: var(--text);
-			opacity: 0.8;
-			& img {
-				height: 1rem;
-				margin-right: 0.25rem;
-				border-radius: 1rem;
-			}
-			&:hover {
-				opacity: 1;
-			}
-			& :visited {
+			gap: 1rem;
+			& a {
+				text-decoration: none;
+				font-weight: 300;
 				color: var(--text);
+				opacity: 0.8;
+				& img {
+					height: 1rem;
+					margin-right: 0.25rem;
+					border-radius: 1rem;
+				}
+				&:hover {
+					opacity: 1;
+				}
+				& :visited {
+					color: var(--text);
+				}
 			}
-		}
-		&:first-child > a {
-			opacity: 1;
-			font-weight: 400;
 		}
 	}
 </style>
