@@ -1,5 +1,8 @@
 ---
 import Layout from '../layouts/portfolio.astro'
+import Card from '../components/ui/Card.astro'
+
+const imageURL = '/assets/jeffm-logo.png'
 ---
 
 <Layout>
@@ -243,4 +246,13 @@ import Layout from '../layouts/portfolio.astro'
 			</button>
 		</a>
 	</section>
+	<Card>
+		<img src={imageURL} />
+		<div>
+			<h3>Project 1</h3>
+			<p>Project 1 description lorem ipsum sit dolor amet</p>
+			<button>Link to app</button>
+			<button>GitHub repo</button>
+		</div>
+	</Card>
 </Layout>
