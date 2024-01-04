@@ -1,21 +1,23 @@
 ---
 
 ---
+
 <div>
-    <slot />
+	<slot />
 </div>
 
 <style>
-    div:first-of-type {
-        display: flex;
-        flex-wrap: wrap;
-        box-shadow: 1px 1px 5px black;
+	div {
+		display: flex;
+		flex-wrap: wrap;
 
+		box-shadow: 1px 1px 5px black;
+		margin-block: 4rem;
+	}
 
-        & img {
-            width: 5rem;
-        
-        }
-
+    div > div {
+        padding: 2rem;
     }
+
+	/* media query for mobile */
 </style>
