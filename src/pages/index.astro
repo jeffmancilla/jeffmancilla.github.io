@@ -1,6 +1,7 @@
 ---
+import '@/styles/globals.css'
 import Layout from '../layouts/portfolio.astro'
-import Card from '../components/ui/Card.astro'
+import { Button } from '@/components/ui/button'
 
 const imageURL = '/assets/jeffm-logo.png'
 
@@ -44,42 +45,43 @@ const cards = [
 			>Full-stack Web Developer - ServiceNow Administrator - Technologist</strong
 		>
 		<p>
-			with an eye for user experience and efficiency. Over a decade of previous
-			experience in IT and ServiceNow development in the higher education space.
+			I love to build good user experiences that are efficient and scaleable. Previously in the higher education space with over a decade of experience in IT service management, system administration and ServiceNow development.
 		</p>
-		<p>Check out my projects below and lets connect!</p>
-		<a href="mailto:jeffmancilla@outlook.com">
-			<button class="primary">
-				<svg
-					xmlns="http://www.w3.org/2000/svg"
-					width="16"
-					height="16"
-					viewBox="0 0 2048 2048"
-				>
-					<path
-						fill="currentColor"
-						d="M2048 384v1280H0V384zM143 512l881 441l881-441zm1777 1024V648l-896 447l-896-447v888z"
-					></path>
-				</svg>
-				 jeffmancilla@outlook.com
-			</button>
-		</a>
-		<a href="/jeff-mancilla-resume.pdf">
-			<button>
-				<svg
-					xmlns="http://www.w3.org/2000/svg"
-					width="16"
-					height="16"
-					viewBox="0 0 2048 2048"
-				>
-					<path
-						fill="currentColor"
-						d="m1243 0l549 549v1499H128V0zm37 219v293h293zM256 1920h1408V640h-512V128H256zm256-896V896h896v128zm0 256v-128h896v128zm0 256v-128h896v128z"
-					></path>
-				</svg>
-				 Resume
-			</button>
-		</a>
+		<p>Check out my some of my projects below and lets connect!</p>
+		<div>
+			<a href="mailto:jeffmancilla@outlook.com">
+				<Button>
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						width="16"
+						height="16"
+						viewBox="0 0 2048 2048"
+					>
+						<path
+							fill="currentColor"
+							d="M2048 384v1280H0V384zM143 512l881 441l881-441zm1777 1024V648l-896 447l-896-447v888z"
+						></path>
+					</svg>
+					jeffmancilla@outlook.com
+				</Button>
+			</a>
+			<a href="/jeff-mancilla-resume.pdf">
+				<Button>
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						width="16"
+						height="16"
+						viewBox="0 0 2048 2048"
+					>
+						<path
+							fill="currentColor"
+							d="m1243 0l549 549v1499H128V0zm37 219v293h293zM256 1920h1408V640h-512V128H256zm256-896V896h896v128zm0 256v-128h896v128zm0 256v-128h896v128z"
+						></path>
+					</svg>
+					Resume
+				</Button>
+			</a>
+		</div>
 	</section>
 	<section id="skills">
 		<h2>Skills</h2>
@@ -277,7 +279,7 @@ const cards = [
 	</section>
 	<section id="projects">
 		<h2>Projects</h2>
-		<div class="flex-column">
+		<div class="flex flex-col gap-8">
 			<div>
 				<img src={cards[0].img} />
 				<div>
@@ -316,17 +318,22 @@ const cards = [
 		&#hero {
 			display: flex;
 			flex-direction: column;
+			gap: 1rem;
 			align-items: center;
 			margin-top: 0;
 
 			& p {
 				text-align: center;
 			}
+			& button > svg {
+				margin-right: .25rem;
+			}
 
 			& img {
+				width: 12rem;
 				display: block;
 				border-radius: 50%;
-				margin: 2rem auto;
+				margin: 1rem auto;
 				border: 1px solid currentColor;
 				box-shadow: var(--shadow);
 			}
@@ -362,10 +369,5 @@ const cards = [
 				text-wrap: wrap;
 			}
 		}
-	}
-	.flex-column {
-		display: flex;
-		flex-direction: column;
-		gap: 2rem;
 	}
 </style>
