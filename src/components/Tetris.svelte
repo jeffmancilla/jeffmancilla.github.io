@@ -39,7 +39,7 @@
 	}
 
 	const init = () => {
-        buildUI()
+		buildUI()
 		const initButton = document.querySelector('#init')
 		initButton.style = 'display: none'
 	}
@@ -59,19 +59,20 @@
 			margin: 0.5rem;
 			border: 1px groove currentcolor;
 		}
-		& #grid {
-			display: flex;
-			flex-direction: column;
+	}
+
+	#grid {
+		display: flex;
+		flex-direction: column;
+
+		& > * {
+			display: grid;
+			grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 
 			& > * {
-				display: grid;
-				grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-
-				& > * {
-					border: 1px groove currentcolor;
-					width: 1rem;
-					height: 1rem;
-				}
+				border: 1px groove currentcolor;
+				width: 1rem;
+				height: 1rem;
 			}
 		}
 	}
@@ -81,4 +82,5 @@
 		width: 1rem;
 		height: 1rem;
 	}
+	
 </style>
