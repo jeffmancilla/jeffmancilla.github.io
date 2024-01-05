@@ -2,33 +2,64 @@
 import '@/styles/globals.css'
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <header>
-        <span>JeffM .</span>
-        <nav>
-            <ul>
-                <li>
-                    <a href="/#projects">Projects</a>
-                </li>
-                <li>
-                    <a href="https://github.com/jeffmancilla" aria-label="GitHub">GitHub</a>
-                </li>
-                <li>
-                    <a href="https://linkedin.com/in/jeffmancilla" aria-label="LinkedIn">LinkedIn</a>
-                </li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <slot />
-    </main>
-    <footer>Built with Astro</footer>
-</body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<header>
+			<span>JeffM .</span>
+			<nav>
+				<ul>
+					<li>
+						<a href="/#projects">Projects</a>
+					</li>
+					<li>
+						<a href="https://github.com/jeffmancilla" aria-label="GitHub"
+							>GitHub</a
+						>
+					</li>
+					<li>
+						<a href="https://linkedin.com/in/jeffmancilla" aria-label="LinkedIn"
+							>LinkedIn</a
+						>
+					</li>
+				</ul>
+			</nav>
+		</header>
+		<main>
+			<slot />
+		</main>
+		<footer>Built with Astro</footer>
+	</body>
 </html>
+
+<style>
+	body {
+		margin: 0 auto;
+		width: min(90vw, 75ch);
+        height: 100dvh;
+
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+	}
+    header {
+        display: flex;
+        justify-content: space-between;
+    }
+    nav > ul {
+        display: flex;
+        gap: 1rem;
+    }
+    main {
+        flex-grow: 1;
+    }
+    footer {
+        display: flex;
+        justify-content: center;
+    }
+</style>
