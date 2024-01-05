@@ -1,0 +1,162 @@
+---
+const { title } = Astro.props
+
+const navItems = [
+	{
+		href: '/',
+		text: 'Home',
+	},
+	{
+		href: '/projects',
+		text: 'Projects',
+	},
+
+	{
+		href: '/palette',
+		text: 'Palette',
+	},
+]
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title || 'Jeff Mancilla'}</title>
+	</head>
+	<body>
+		<header>
+			<nav>
+				<span>JeffM .</span>
+				<ul>
+					{
+						navItems.map((item) => {
+							return (
+								<li>
+									<a href={item.href}>{item.text}</a>
+								</li>
+							)
+						})
+					}
+				</ul>
+			</nav>
+		</header>
+		<main>
+			<slot />
+		</main>
+		<footer>Built with Astro</footer>
+	</body>
+</html>
+
+<style is:global>
+	@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+	:root {
+		--dark: hsl(0, 0%, 15%);
+		--light: hsla(0, 0%, 100%, 0.85);
+		--accent-1: #3f7cac;
+		--accent-2: #6a8eae;
+		--humanist: Seravek, 'Gill Sans Nova', Ubuntu, Calibri, 'DejaVu Sans',
+			source-sans-pro, sans-serif;
+		--classical-humanist: Optima, Candara, 'Noto Sans', source-sans-pro,
+			sans-serif;
+		--ui-rounded: ui-rounded, 'Hiragino Maru Gothic ProN', Quicksand, Comfortaa, Manjari, 'Arial Rounded MT', 'Arial Rounded MT Bold', Calibri, source-sans-pro, sans-serif;
+
+		--text: var(--dark);
+		--background: var(--light);
+		--max-width: 70ch;
+		--shadow: 1px 1px 10px black;
+	}
+	@media (prefers-color-scheme: dark) {
+		:root {
+			--text: var(--light);
+			--background: var(--dark);
+		}
+	}
+
+	html {
+		color: var(--text);
+		background: var(--background);
+		font-family: var(--ui-rounded);
+		a {
+			color: color-mix(in lch, var(--text) 50%, var(--accent-1) 50%);
+			&:visited {
+				color: color-mix(in lch, var(--text) 75%, var(--accent-1) 25%);
+			}
+			&:hover {
+				color: color-mix(in lch, var(--text) 75%, var(--accent-1) 25%);
+			}
+		}
+	}
+	h1,
+	h2,
+	h3,
+	p {
+		margin: 0;
+		margin-bottom: 1rem;
+	}
+	section {
+		margin-bottom: 1rem;
+	}
+</style>
+
+<style>
+	body {
+		margin: auto;
+		width: min(90vw, var(--max-width));
+		height: 100dvh;
+
+		display: flex;
+		flex-direction: column;
+
+		& > :is(header, main, footer) {
+			padding: 1rem;
+		}
+		& main {
+			flex-grow: 1;
+		}
+		& footer {
+			padding-top: 0;
+			text-align: center;
+			opacity: 0.5;
+			font-weight: 300;
+		}
+	}
+
+	nav {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		align-items: center;
+
+		&:first-child{
+			font-weight: 600;
+		}	
+		& ul {
+			padding-left: 0;
+			list-style: none;
+			display: flex;
+			justify-content: flex-end;
+			gap: 1rem;
+			& a {
+				text-decoration: none;
+				font-weight: 300;
+				color: var(--text);
+				opacity: 0.8;
+				& img {
+					height: 1rem;
+					margin-right: 0.25rem;
+					border-radius: 1rem;
+				}
+				&:hover {
+					opacity: 1;
+				}
+				& :visited {
+					color: var(--text);
+				}
+			}
+		}
+	}
+</style>
