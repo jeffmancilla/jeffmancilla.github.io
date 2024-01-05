@@ -9,5 +9,7 @@ export default defineConfig({
   output: 'hybrid',
   integrations: [svelte(), tailwind({
     applyBaseStyles: false
-  }), react()]
+  }), react()],
+  site: 'https://jeffmancilla.github.io',
+
 });
