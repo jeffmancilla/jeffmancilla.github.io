@@ -2,6 +2,7 @@
 import '@/styles/globals.css'
 import { ModeToggle } from '@/components/ModeToggle.tsx'
 ---
+
 <script is:inline>
 	const getThemePreference = () => {
 		if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
@@ -26,11 +27,11 @@ import { ModeToggle } from '@/components/ModeToggle.tsx'
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Document</title>
+		<title>Jeff Mancilla</title>
 	</head>
 	<body>
 		<header>
-			<span>JeffM .</span>
+			<span class="font-extrabold">JeffM .</span>
 			<nav>
 				<ul>
 					<li>
@@ -53,23 +54,22 @@ import { ModeToggle } from '@/components/ModeToggle.tsx'
 		<main>
 			<slot />
 		</main>
-		<footer>Built with Astro</footer>
+		<footer class="opacity-70 text-sm">© Jeff Mancilla 2024. Built with Astro</footer>
 	</body>
 </html>
 
 <style>
     html {
-        width: min(90vw, 75ch);
-        margin: 0 auto;
+        scroll-behavior: smooth;
     }
 	body {
-        height: 100dvh;
-
+        height: 100svh;
+        
         display: flex;
         flex-direction: column;
 	}
     header, main, footer {
-        margin-block: 1rem;
+        margin: 1rem;
     }
     header {
         display: flex;
@@ -85,8 +85,15 @@ import { ModeToggle } from '@/components/ModeToggle.tsx'
         align-items: center;
         gap: 1rem;
     }
+    nav a {
+        opacity: .7;
+    }
+    nav a:hover {
+        opacity: 1;
+    }
     main {
         flex-grow: 1;
+        margin: 0 auto;
     }
     footer {
         display: flex;

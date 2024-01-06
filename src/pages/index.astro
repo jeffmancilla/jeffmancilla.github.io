@@ -1,42 +1,103 @@
 ---
 import Layout from '../layouts/portfolio.astro'
 import { Button } from '@/components/ui/button'
+import { Badge } from '@/components/ui/badge'
+import { Separator } from '@/components/ui/separator.tsx'
 ---
 
 <Layout>
 	<section id="about">
-		<div>headshot</div>
+		<div class="headshot" aria-label="headshot of Jeff"/>
 		<div>
-			<p>Hello~</p>
-			<p>
-				I'm <h1>Jeff Mancilla</h1>
+			<p class="inline text-5xl">
+				I'm <h1 class="inline text-5xl font-extrabold">Jeff Mancilla</h1>
 			</p>
+			<p class="text-3xl font-bold">Full-stack Developer · Technologist</p>
 			<p>
-				lorem ipsum
+				I build experiences with efficient UI and scaleability in mind.
+				Previously in the higher education IT space with over ten years of
+				experience in service management, system administration, web
+				content/accessibility and ServiceNow development.
 			</p>
-			<p>
-				sit dolor amet
-			</p>
+			<p>Check out my some of my projects below and lets connect!</p>
 		</div>
 		<div>
 			<Button>jeffmancilla@outlook.com</Button>
-			<Button>Resume</Button>
+			<Button variant="secondary">Resume</Button>
 		</div>
 	</section>
-	<section id="skills">
-		<h2>Skills</h2>
-			<div>
-				html
-			</div>
-			<div>
-				css
-			</div>
-			<div>
-				js
-			</div>
+	<Separator />
+	<section id="projects">
+		<h2 class="text-4xl font-extrabold">Projects</h2>
+		<div>
+			<h3>Recipes (working title)</h3>
+			<Badge variant="outline">React</Badge>
+			<Badge variant="outline">Vite</Badge>
+			<Badge variant="outline">REST</Badge>
+			<p>A recipe catalog - minimally designed, fast, and easy to follow</p>
+			<a href="https://exquisite-klepon-51cda7.netlify.app">
+				<Badge>App</Badge>
+			</a>
+			<a href="https://github.com/jeffmancilla/recipes">
+				<Badge variant="secondary">Repo</Badge>
+			</a>
+		</div>
+		<div>
+			<h3>Tender</h3>
+			<Badge variant="outline">Express</Badge>
+			<Badge variant="outline">EJS</Badge>
+			<Badge variant="outline">REST</Badge>
+			<p>Find your next meal</p>
+			<a href="https://tender-f3bf64ad9858.herokuapp.com">
+				<Badge>App</Badge>
+			</a>
+			<a href="https://github.com/valenium/Tinder-But-For-Restaurants">
+				<Badge variant="secondary">Repo</Badge>
+			</a>
+		</div>
+		<div>
+			<h3>Mid Typing</h3>
+			<Badge variant="outline">JavaScript</Badge>
+			<Badge variant="outline">CSS</Badge>
+			<Badge variant="outline">HTML</Badge>
+			<p>Typing game with a Souls-like twist</p>
+			<a href="https://jeffmancilla.github.io/mid-typing-game">
+				<Badge>App</Badge>
+			</a>
+			<a href="https://github.com/jeffmancilla/mid-typing-game">
+				<Badge variant="secondary">Repo</Badge>
+			</a>
+		</div>
 	</section>
-	<section>
-		<h2>Projects</h2>
-		<div></div>
+	<Separator />
+	<section id="skills">
+		<h2 class="text-4xl font-extrabold">Skills</h2>
+		<ul>
+			<li>React</li>
+			<li>Svelte</li>
+			<li>Astro</li>
+			<li>Typescript</li>
+			<li>Tailwind</li>
+			<li>CSS</li>
+			<li>HTML5</li>
+			<li>Python</li>
+			<li>ServiceNow</li>
+		</ul>
 	</section>
 </Layout>
+
+<style>
+	section {
+		margin: 3rem;
+		width: min(90vw, 75ch);
+		text-align: center;
+	}
+
+	#about * {
+		margin-block: 1rem;
+	}
+
+	.headshot {
+		background-image: url('https://jeffmancilla.github.io/assets/jeffm.png');
+	}
+</style>
