@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/portfolio.astro'
+import { Mail, FileText } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { Separator } from '@/components/ui/separator.tsx'
@@ -7,14 +8,14 @@ import { Separator } from '@/components/ui/separator.tsx'
 
 <Layout>
 	<section id="about">
-		<div class="headshot" aria-label="headshot of Jeff"/>
+		<img class="inline w-48 border-foreground border-2 rounded-full shadow" src="/assets/jeffm.png" alt="Jeff's headshot" />
 		<div>
 			<p class="inline text-5xl">
 				I'm <h1 class="inline text-5xl font-extrabold">Jeff Mancilla</h1>
 			</p>
-			<p class="text-3xl font-bold">Full-stack Developer · Technologist</p>
+			<h2 class="text-3xl font-bold">Full-stack Developer · Technologist</h2>
 			<p>
-				I build experiences with efficient UI and scaleability in mind.
+				I love to build experiences with efficient UI and scaleability in mind.
 				Previously in the higher education IT space with over ten years of
 				experience in service management, system administration, web
 				content/accessibility and ServiceNow development.
@@ -22,15 +23,23 @@ import { Separator } from '@/components/ui/separator.tsx'
 			<p>Check out my some of my projects below and lets connect!</p>
 		</div>
 		<div>
-			<Button>jeffmancilla@outlook.com</Button>
-			<Button variant="secondary">Resume</Button>
+			<a href="mailto:jeffmancilla@outlook.com">
+				<Button>
+					<Mail className="mr-2 h-4 w-4" />Email
+				</Button>
+			</a>
+			<a href="/assets/jeffm.png">
+				<Button variant="secondary">
+					<FileText className="mr-2 h-4 w-4" />Resume
+				</Button>
+			</a>
 		</div>
 	</section>
 	<Separator />
 	<section id="projects">
 		<h2 class="text-4xl font-extrabold">Projects</h2>
 		<div>
-			<h3>Recipes (working title)</h3>
+			<h3 class="text-2xl font-bold">Recipes (working title)</h3>
 			<Badge variant="outline">React</Badge>
 			<Badge variant="outline">Vite</Badge>
 			<Badge variant="outline">REST</Badge>
@@ -43,11 +52,11 @@ import { Separator } from '@/components/ui/separator.tsx'
 			</a>
 		</div>
 		<div>
-			<h3>Tender</h3>
+			<h3 class="text-2xl font-bold">Tender</h3>
 			<Badge variant="outline">Express</Badge>
 			<Badge variant="outline">EJS</Badge>
 			<Badge variant="outline">REST</Badge>
-			<p>Find your next meal</p>
+			<p>Find your next meal (Tinder but for restaurants)</p>
 			<a href="https://tender-f3bf64ad9858.herokuapp.com">
 				<Badge>App</Badge>
 			</a>
@@ -56,7 +65,7 @@ import { Separator } from '@/components/ui/separator.tsx'
 			</a>
 		</div>
 		<div>
-			<h3>Mid Typing</h3>
+			<h3 class="text-2xl font-bold">Mid Typing</h3>
 			<Badge variant="outline">JavaScript</Badge>
 			<Badge variant="outline">CSS</Badge>
 			<Badge variant="outline">HTML</Badge>
@@ -95,9 +104,5 @@ import { Separator } from '@/components/ui/separator.tsx'
 
 	#about * {
 		margin-block: 1rem;
-	}
-
-	.headshot {
-		background-image: url('https://jeffmancilla.github.io/assets/jeffm.png');
 	}
 </style>
