@@ -9,26 +9,28 @@ import { Separator } from '@/components/ui/separator.tsx'
 <Layout>
 	<section id="about">
 		<img
-		class="inline w-48 border-foreground border-2 rounded-full shadow"
-		src="/assets/jeffm.png"
-		alt="Jeff's headshot"
-	/>
-		<div>
-			<p class="inline text-5xl">
-				I'm <h1 class="shadow-2xl bg-clip-text text-transparent bg-gradient-to-r from-foreground to-primary inline text-5xl font-extrabold">
-					Jeff Mancilla
-				</h1>
-			</p>
-			<h2 class="text-3xl font-bold text-primary">Full-stack Developer · Technologist</h2>
-			<p>
-				I love to build experiences with efficient UI and scalability in mind.
-				Previously in the higher education IT space with over ten years of
-				experience in service management, system administration, web
-				content/accessibility and ServiceNow development.
-			</p>
-			<p>Check out my some of my projects below and lets connect!</p>
-		</div>
-		<div>
+			class="mx-auto w-48 border-foreground border-2 rounded-full shadow"
+			src="/assets/jeffm.png"
+			alt="Jeff's headshot"
+		/>
+		<p class="inline-block text-5xl">
+			I'm <h1
+				class="shadow-2xl bg-clip-text text-transparent bg-gradient-to-r from-foreground to-primary inline text-5xl font-extrabold"
+			>
+				Jeff Mancilla
+			</h1>
+		</p>
+		<h2 class="text-3xl font-bold text-primary">
+			Full-stack Developer · Technologist
+		</h2>
+		<p>
+			I love to build experiences with efficient UI and scalability in mind.
+			Previously in the higher education IT space with over ten years of
+			experience in service management, system administration, web
+			content/accessibility and ServiceNow development.
+		</p>
+		<p>Check out my some of my projects below and lets connect!</p>
+		<div class="flex flex-wrap justify-center gap-4">
 			<a href="mailto:jeffmancilla@outlook.com">
 				<Button>
 					<Mail className="mr-2 h-4 w-4" />jeffmancilla@outlook.com
@@ -54,22 +56,54 @@ import { Separator } from '@/components/ui/separator.tsx'
 					src="/assets/recipes.webp"
 				/>
 			</div>
-			<div class="w-80 flex flex-col p-6 space-y-4 md:w-1/2">
+			<div class="w-80 flex flex-col gap-2 p-8 space-y-4 md:w-1/2">
 				<h3 class="text-2xl font-bold">Recipes (working title)</h3>
 				<div>
 					<Badge variant="outline">React</Badge>
 					<Badge variant="outline">Vite</Badge>
 					<Badge variant="outline">REST</Badge>
 				</div>
-				<p>
-					A recipe catalog - minimally designed, fast, and easy to follow
-				</p>
+				<p>A recipe catalog - minimally designed, fast, and easy to follow</p>
 				<div>
 					<a href="https://exquisite-klepon-51cda7.netlify.app">
-						<Button variant="default">App<ExternalLink className="ml-1 h-3 w-3" /></Button>
+						<Button variant="default">
+							App<ExternalLink className="ml-1 h-3 w-3" />
+						</Button>
 					</a>
 					<a href="https://github.com/jeffmancilla/recipes">
-						<Button variant="secondary">Repo<ExternalLink className="ml-1 h-3 w-3" /></Button>
+						<Button variant="secondary">
+							Repo<ExternalLink className="ml-1 h-3 w-3" />
+						</Button>
+					</a>
+				</div>
+			</div>
+		</div>
+		<div
+			class="flex flex-col md:flex-row bg-card rounded-lg shadow-md overflow-hidden max-w-80 md:max-w-2xl mx-auto"
+		>
+			<div class="md:w-1/2">
+				<img alt="tender" class="w-80 object-cover" src="/assets/tender.webp" />
+			</div>
+			<div class="w-80 flex flex-col gap-2 p-8 space-y-4 md:w-1/2">
+				<h3 class="text-2xl font-bold">Tender</h3>
+				<div>
+					<Badge variant="outline">Express</Badge>
+					<Badge variant="outline">EJS</Badge>
+					<Badge variant="outline">REST</Badge>
+				</div>
+				<p>
+					Find your next meal (Tinder but for restaurants)
+				</p>
+				<div>
+					<a href="https://tender-f3bf64ad9858.herokuapp.com">
+						<Button variant="default">
+							App<ExternalLink className="ml-1 h-3 w-3" />
+						</Button>
+					</a>
+					<a href="https://github.com/valenium/Tinder-But-For-Restaurants">
+						<Button variant="secondary">
+							Repo<ExternalLink className="ml-1 h-3 w-3" />
+						</Button>
 					</a>
 				</div>
 			</div>
@@ -79,57 +113,31 @@ import { Separator } from '@/components/ui/separator.tsx'
 		>
 			<div class="md:w-1/2">
 				<img
-					alt="tender"
-					class="w-80 object-cover"
-					src="/assets/tender.webp"
-				/>
-			</div>
-			<div class="w-80 flex flex-col p-6 space-y-4 md:w-1/2">
-				<h3 class="text-2xl font-bold">Tender</h3>
-				<div>
-					<Badge variant="outline">Express</Badge>
-					<Badge variant="outline">EJS</Badge>
-					<Badge variant="outline">REST</Badge>
-				</div>
-				<p class="flex-grow align-middle">
-					Find your next meal (Tinder but for restaurants)
-				</p>
-				<div>
-					<a href="https://tender-f3bf64ad9858.herokuapp.com">
-						<Button variant="link">App<ExternalLink className="ml-1 h-3 w-3" /></Button>
-					</a>
-					<a href="https://github.com/valenium/Tinder-But-For-Restaurants">
-						<Button variant="link">Repo<ExternalLink className="ml-1 h-3 w-3" /></Button>
-					</a>
-				</div>
-			</div>
-		</div>
-		<div
-			class="flex flex-col md:flex-row bg-card rounded-lg shadow-md overflow-hidden max-w-80 md:max-w-2xl mx-auto"
-		>
-		<div class="md:w-1/2">
-			<img
 					alt="mid typing"
 					class="w-80 object-cover"
 					src="/assets/mid-typing.webp"
 				/>
 			</div>
-			<div class="w-80 flex flex-col p-6 space-y-4 md:w-1/2">
+			<div class="w-80 flex flex-col gap-2 p-8 space-y-4 md:w-1/2">
 				<h3 class="text-2xl font-bold">Mid Typing</h3>
 				<div>
 					<Badge variant="outline">JavaScript</Badge>
 					<Badge variant="outline">CSS</Badge>
 					<Badge variant="outline">HTML</Badge>
 				</div>
-				<p class="flex-grow align-middle">
+				<p>
 					Speed typing game with a Souls-like twist
 				</p>
 				<div>
 					<a href="https://jeffmancilla.github.io/mid-typing-game">
-						<Button variant="link">App <ExternalLink className="ml-1 h-3 w-3" /></Button>
+						<Button variant="default">
+							App <ExternalLink className="ml-1 h-3 w-3" />
+						</Button>
 					</a>
 					<a href="https://github.com/jeffmancilla/mid-typing-game">
-						<Button variant="link">Repo <ExternalLink className="ml-1 h-3 w-3" /></Button>
+						<Button variant="secondary">
+							Repo <ExternalLink className="ml-1 h-3 w-3" />
+						</Button>
 					</a>
 				</div>
 			</div>
@@ -156,7 +164,7 @@ import { Separator } from '@/components/ui/separator.tsx'
 			text-align: center;
 			margin-block: 3rem;
 		}
-		#about * {
+		#about > * {
 			margin-block: 1rem;
 		}
 	</style>
