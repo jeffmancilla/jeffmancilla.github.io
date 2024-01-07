@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/portfolio.astro'
-import { Mail, FileText } from 'lucide-react'
+import { Mail, FileText, ExternalLink } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { Separator } from '@/components/ui/separator.tsx'
@@ -15,7 +15,7 @@ import { Separator } from '@/components/ui/separator.tsx'
 	/>
 		<div>
 			<p class="inline text-5xl">
-				I'm <h1 class="bg-clip-text text-transparent bg-gradient-to-r from-foreground to-primary inline text-5xl font-extrabold">
+				I'm <h1 class="shadow-2xl bg-clip-text text-transparent bg-gradient-to-r from-foreground to-primary inline text-5xl font-extrabold">
 					Jeff Mancilla
 				</h1>
 			</p>
@@ -61,15 +61,15 @@ import { Separator } from '@/components/ui/separator.tsx'
 					<Badge variant="outline">Vite</Badge>
 					<Badge variant="outline">REST</Badge>
 				</div>
-				<p class="flex-grow align-middle">
+				<p>
 					A recipe catalog - minimally designed, fast, and easy to follow
 				</p>
 				<div>
 					<a href="https://exquisite-klepon-51cda7.netlify.app">
-						<Button variant="link">App</Button>
+						<Button variant="default">App<ExternalLink className="ml-1 h-3 w-3" /></Button>
 					</a>
 					<a href="https://github.com/jeffmancilla/recipes">
-						<Button variant="link">Repo</Button>
+						<Button variant="secondary">Repo<ExternalLink className="ml-1 h-3 w-3" /></Button>
 					</a>
 				</div>
 			</div>
@@ -96,10 +96,10 @@ import { Separator } from '@/components/ui/separator.tsx'
 				</p>
 				<div>
 					<a href="https://tender-f3bf64ad9858.herokuapp.com">
-						<Button variant="link">App</Button>
+						<Button variant="link">App<ExternalLink className="ml-1 h-3 w-3" /></Button>
 					</a>
 					<a href="https://github.com/valenium/Tinder-But-For-Restaurants">
-						<Button variant="link">Repo</Button>
+						<Button variant="link">Repo<ExternalLink className="ml-1 h-3 w-3" /></Button>
 					</a>
 				</div>
 			</div>
@@ -126,10 +126,10 @@ import { Separator } from '@/components/ui/separator.tsx'
 				</p>
 				<div>
 					<a href="https://jeffmancilla.github.io/mid-typing-game">
-						<Button variant="link">App</Button>
+						<Button variant="link">App <ExternalLink className="ml-1 h-3 w-3" /></Button>
 					</a>
 					<a href="https://github.com/jeffmancilla/mid-typing-game">
-						<Button variant="link">Repo</Button>
+						<Button variant="link">Repo <ExternalLink className="ml-1 h-3 w-3" /></Button>
 					</a>
 				</div>
 			</div>
