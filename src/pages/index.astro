@@ -44,101 +44,103 @@ import { Separator } from '@/components/ui/separator.tsx'
 		</div>
 	</section>
 	<Separator />
-	<section class="flex flex-col gap-8" id="projects">
+	<section id="projects">
 		<h2 class="text-4xl font-extrabold">Projects</h2>
-		<div
-			class="flex flex-col md:flex-row bg-card rounded-lg shadow-md overflow-hidden max-w-80 md:max-w-2xl mx-auto"
-		>
-			<div class="md:w-1/2">
-				<img
-					alt="recipes"
-					class="w-80 object-cover"
-					src="/assets/recipes.webp"
-				/>
-			</div>
-			<div class="w-80 flex flex-col gap-2 p-8 space-y-4 md:w-1/2">
-				<h3 class="text-2xl font-bold">Recipes (working title)</h3>
-				<div>
-					<Badge variant="outline">React</Badge>
-					<Badge variant="outline">Vite</Badge>
-					<Badge variant="outline">REST</Badge>
+		<div class="flex flex-col gap-8">
+			<div
+				class="flex flex-col md:flex-row bg-card rounded-lg shadow-md overflow-hidden max-w-80 md:max-w-2xl mx-auto"
+			>
+				<div class="md:w-1/2">
+					<img
+						alt="recipes"
+						class="w-80 object-cover"
+						src="/assets/recipes.webp"
+					/>
 				</div>
-				<p>A recipe catalog - minimally designed, fast, and easy to follow</p>
-				<div>
-					<a href="https://exquisite-klepon-51cda7.netlify.app">
-						<Button variant="secondary">
-							App<ExternalLink className="ml-1 h-3 w-3" />
-						</Button>
-					</a>
-					<a href="https://github.com/jeffmancilla/recipes">
-						<Button variant="secondary">
-							Repo<ExternalLink className="ml-1 h-3 w-3" />
-						</Button>
-					</a>
-				</div>
-			</div>
-		</div>
-		<div
-			class="flex flex-col md:flex-row bg-card rounded-lg shadow-md overflow-hidden max-w-80 md:max-w-2xl mx-auto"
-		>
-			<div class="md:w-1/2">
-				<img alt="tender" class="w-80 object-cover" src="/assets/tender.webp" />
-			</div>
-			<div class="w-80 flex flex-col gap-2 p-8 space-y-4 md:w-1/2">
-				<h3 class="text-2xl font-bold">Tender</h3>
-				<div>
-					<Badge variant="outline">Express</Badge>
-					<Badge variant="outline">EJS</Badge>
-					<Badge variant="outline">REST</Badge>
-				</div>
-				<p>
-					Find your next meal (Tinder but for restaurants)
-				</p>
-				<div>
-					<a href="https://tender-f3bf64ad9858.herokuapp.com">
-						<Button variant="secondary">
-							App<ExternalLink className="ml-1 h-3 w-3" />
-						</Button>
-					</a>
-					<a href="https://github.com/valenium/Tinder-But-For-Restaurants">
-						<Button variant="secondary">
-							Repo<ExternalLink className="ml-1 h-3 w-3" />
-						</Button>
-					</a>
+				<div class="w-80 flex flex-col gap-2 p-8 space-y-4 md:w-1/2">
+					<h3 class="text-2xl font-bold">Recipes (working title)</h3>
+					<div>
+						<Badge variant="outline">React</Badge>
+						<Badge variant="outline">Vite</Badge>
+						<Badge variant="outline">REST</Badge>
+					</div>
+					<p>A recipe catalog - minimally designed, fast, and easy to follow</p>
+					<div>
+						<a href="https://exquisite-klepon-51cda7.netlify.app">
+							<Button variant="secondary">
+								App<ExternalLink className="ml-1 h-3 w-3" />
+							</Button>
+						</a>
+						<a href="https://github.com/jeffmancilla/recipes">
+							<Button variant="secondary">
+								Repo<ExternalLink className="ml-1 h-3 w-3" />
+							</Button>
+						</a>
+					</div>
 				</div>
 			</div>
-		</div>
-		<div
-			class="flex flex-col md:flex-row bg-card rounded-lg shadow-md overflow-hidden max-w-80 md:max-w-2xl mx-auto"
-		>
-			<div class="md:w-1/2">
-				<img
-					alt="mid typing"
-					class="w-80 object-cover"
-					src="/assets/mid-typing.webp"
-				/>
-			</div>
-			<div class="w-80 flex flex-col gap-2 p-8 space-y-4 md:w-1/2">
-				<h3 class="text-2xl font-bold">Mid Typing</h3>
-				<div>
-					<Badge variant="outline">JavaScript</Badge>
-					<Badge variant="outline">CSS</Badge>
-					<Badge variant="outline">HTML</Badge>
+			<div
+				class="flex flex-col md:flex-row bg-card rounded-lg shadow-md overflow-hidden max-w-80 md:max-w-2xl mx-auto"
+			>
+				<div class="md:w-1/2">
+					<img
+						alt="tender"
+						class="w-80 object-cover"
+						src="/assets/tender.webp"
+					/>
 				</div>
-				<p>
-					Speed typing game with a Souls-like twist
-				</p>
-				<div>
-					<a href="https://jeffmancilla.github.io/mid-typing-game">
-						<Button variant="secondary">
-							App <ExternalLink className="ml-1 h-3 w-3" />
-						</Button>
-					</a>
-					<a href="https://github.com/jeffmancilla/mid-typing-game">
-						<Button variant="secondary">
-							Repo <ExternalLink className="ml-1 h-3 w-3" />
-						</Button>
-					</a>
+				<div class="w-80 flex flex-col gap-2 p-8 space-y-4 md:w-1/2">
+					<h3 class="text-2xl font-bold">Tender</h3>
+					<div>
+						<Badge variant="outline">Express</Badge>
+						<Badge variant="outline">EJS</Badge>
+						<Badge variant="outline">REST</Badge>
+					</div>
+					<p>Find your next meal (Tinder but for restaurants)</p>
+					<div>
+						<a href="https://tender-f3bf64ad9858.herokuapp.com">
+							<Button variant="secondary">
+								App<ExternalLink className="ml-1 h-3 w-3" />
+							</Button>
+						</a>
+						<a href="https://github.com/valenium/Tinder-But-For-Restaurants">
+							<Button variant="secondary">
+								Repo<ExternalLink className="ml-1 h-3 w-3" />
+							</Button>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div
+				class="flex flex-col md:flex-row bg-card rounded-lg shadow-md overflow-hidden max-w-80 md:max-w-2xl mx-auto"
+			>
+				<div class="md:w-1/2">
+					<img
+						alt="mid typing"
+						class="w-80 object-cover"
+						src="/assets/mid-typing.webp"
+					/>
+				</div>
+				<div class="w-80 flex flex-col gap-2 p-8 space-y-4 md:w-1/2">
+					<h3 class="text-2xl font-bold">Mid Typing</h3>
+					<div>
+						<Badge variant="outline">JavaScript</Badge>
+						<Badge variant="outline">CSS</Badge>
+						<Badge variant="outline">HTML</Badge>
+					</div>
+					<p>Speed typing game with a Souls-like twist</p>
+					<div>
+						<a href="https://jeffmancilla.github.io/mid-typing-game">
+							<Button variant="secondary">
+								App <ExternalLink className="ml-1 h-3 w-3" />
+							</Button>
+						</a>
+						<a href="https://github.com/jeffmancilla/mid-typing-game">
+							<Button variant="secondary">
+								Repo <ExternalLink className="ml-1 h-3 w-3" />
+							</Button>
+						</a>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -166,6 +168,9 @@ import { Separator } from '@/components/ui/separator.tsx'
 		}
 		#about > * {
 			margin-block: 1rem;
+		}
+		h2 {
+			margin-bottom: 1rem;
 		}
 	</style>
 </Layout>
