@@ -7,50 +7,58 @@ allPosts = allPosts.sort(
 )
 ---
 
-<h2 id="projects" class="text-center text-4xl font-bold mb-6">Projects</h2>
-<div class="flex flex-wrap justify-center gap-4">
-	{
-		allPosts.map((post, index) => {
-			const href = `/projects/${post.file.split("/").pop()?.split(".").shift()}`
-			return (
-				<>
-					<div class="card w-72 bg-base-100 shadow">
-						<figure>
-							<img src={post.frontmatter.image} alt={post.frontmatter.title} />
-						</figure>
-						<div class="card-body">
-							<h3 class="card-title">{post.frontmatter.title}</h3>
+<section>
+	<h2 id="projects" class="text-center text-4xl font-bold mb-8">Projects</h2>
+	<div class="flex flex-wrap justify-center gap-4">
+		{
+			allPosts.map((post, index) => {
+				const href = `/projects/${post.file
+					.split("/")
+					.pop()
+					?.split(".")
+					.shift()}`
+				return (
+					<>
+						<div class="card w-72 bg-base-100 shadow">
+							<figure>
+								<img
+									src={post.frontmatter.image}
+									alt={post.frontmatter.title}
+								/>
+							</figure>
+							<div class="card-body">
+								<h3 class="card-title">{post.frontmatter.title}</h3>
 
-							<div class="flex flex-wrap gap-1">
-								{post.frontmatter.skills.map((skill: string) => (
-									<div class="badge badge-sm badge-ghost">{skill}</div>
-								))}
+								<div class="flex flex-wrap gap-1">
+									{post.frontmatter.skills.map((skill: string) => (
+										<div class="badge badge-sm badge-ghost">{skill}</div>
+									))}
+								</div>
+
+								<p class="font-thin">{post.frontmatter.description}</p>
+
+								<div class="card-actions">
+									<a
+										class="btn btn-sm btn-secondary"
+										href={post.frontmatter.link}
+									>
+										App
+									</a>
+									<a
+										class="btn btn-sm btn-neutral"
+										href={post.frontmatter.github}
+									>
+										Repo
+									</a>
+								</div>
 							</div>
-
-							<p class="font-thin">{post.frontmatter.description}</p>
-
-							<div class="card-actions">
-								<a
-									class="btn btn-sm btn-secondary"
-									href={post.frontmatter.link}
-								>
-									App
-								</a>
-								<a
-									class="btn btn-sm btn-neutral"
-									href={post.frontmatter.github}
-								>
-									Repo
-								</a>
-							</div>
-
 						</div>
-					</div>
-				</>
-			)
-		})
-	}
-</div>
+					</>
+				)
+			})
+		}
+	</div>
+</section>
 <style>
 	.card * {
 		font-family: system-ui, sans-serif;
