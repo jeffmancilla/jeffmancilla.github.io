@@ -10,7 +10,7 @@ import tailwind from "@astrojs/tailwind";
 // https://astro.build/config
 export default defineConfig({
   site: 'https://jeffmancilla.github.io',
-  integrations: [mdx(), svelte(), tailwind()],
+  integrations: [mdx(), tailwind()],
   markdown: {
     shikiConfig: {
       theme: 'nord'

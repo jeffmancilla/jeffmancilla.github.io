@@ -2,7 +2,7 @@
 title: Mid Typing
 publishDate: Nov 2 2023
 description: Speed typing game with a Souls-like twist.
-skills: HTML, CSS, JavaScript
+skills: [HTML, CSS, JavaScript]
 link: https://jeffmancilla.github.io/mid-typing-game
 github: https://github.com/jeffmancilla/mid-typing-game
 image: /assets/mid-typing.png

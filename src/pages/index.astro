@@ -8,18 +8,18 @@ const permalink = Astro.site!.href
 ---
 
 <BaseLayout title={title} description={description} permalink={permalink}>
-	<div class="flex flex-col gap-16">
+	<div class="flex flex-col gap-20">
 		<div class="home-container">
 			<div class="home-copy">
-				<h1 class="text-6xl text-primary font-extrabold mb-8">Hoy 👋</h1>
+				<h1 class="text-6xl font-bold mb-8">Hoy 👋</h1>
 				<p>
-					I'm <strong class="text-primary">Jeff Mancilla</strong>— a full-stack
+					I'm <strong class="text-accent">Jeff Mancilla</strong>—a full-stack
 					developer and technologist based in Houston, TX.
 				</p>
 				<p>
 					Come check out some of <a href="#projects">my projects</a> and let's connect!
 				</p>
-				<div>
+				<div class="flex gap-2 justify-center sm:justify-start">
 					<a class="btn btn-primary" href="https://linkedin.com/in/jeffmancilla"
 						>LinkedIn</a
 					>
@@ -57,7 +57,7 @@ const permalink = Astro.site!.href
 	}
 
 	.home-copy {
-		width: min(40ch);
+		width: min(40ch,100%);
 		& > * + * {
 			margin-top: 1rem;
 		}
@@ -82,16 +82,6 @@ const permalink = Astro.site!.href
 		width: 100%;
 		max-width: 400px;
 		margin-bottom: 1em;
-	}
-
-	@media (max-width: 1200px) {
-		p {
-			font-size: 1.2em;
-		}
-
-		.hero-image {
-			max-width: 400px;
-		}
 	}
 
 	@media (max-width: 640px) {
