@@ -1,143 +1,98 @@
 ---
-import Layout from '../layouts/portfolio.astro'
-import { Mail, FileText, ExternalLink } from 'lucide-react'
-import { Button } from '@/components/ui/button'
-import { Badge } from '@/components/ui/badge'
-import { Separator } from '@/components/ui/separator.tsx'
-import Card from '@/components/Card.astro'
+import Projects from "../components/Projects.astro"
+import BaseLayout from "../layouts/BaseLayout.astro"
+
+const title = "Jeff Mancilla"
+const description = "Portfolio"
+const permalink = Astro.site!.href
 ---
 
-<Layout>
-	<section>
-		<img
-			class="mx-auto w-48 border-foreground border-2 rounded-full shadow"
-			src="/assets/jeffm.png"
-			alt="Jeff's headshot"
-		/>
-		<p class="block text-5xl">
-			I'm <h1
-				class="bg-clip-text text-transparent bg-gradient-to-r from-primary from-40% to-foreground inline text-5xl font-bold p-0"
-			>
-				Jeff Mancilla
-			</h1>
-		</p>
-		<p class="text-3xl font-bold text-primary">
-			Full-stack Developer · Technologist
-		</p>
-	</section>
-	<Separator />
-	<section id="about">
-		<p class="text-lg text-center">
-			I love to build experiences with efficient UI and scalability in mind.
-			Previously in the higher education space with over ten years of experience
-			in ServiceNow development, building web content, ensuring web
-			accessibility, IT service management and system administration.
-		</p>
-		<p class="text-lg text-center">
-			Check out my some of my projects below and lets connect!
-		</p>
-		<div class="flex flex-wrap justify-center gap-2">
-			<a href="https://linkedin.com/in/jeffmancilla">
-				<Button>
-					LinkedIn
-				</Button>
-			</a>
-			<a href="https://github.com/jeffmancilla">
-				<Button>
-					GitHub
-				</Button>
-			</a>
-			<a href="mailto:jeffmancilla@outlook.com">
-				<Button variant="outline">
-					<Mail className="mr-2 h-4 w-4" />jeffmancilla@outlook.com
-				</Button>
-			</a>
+<BaseLayout title={title} description={description} permalink={permalink}>
+	<div class="flex flex-col gap-20">
+		<div class="home-container">
+			<div class="home-copy">
+				<h1 class="text-6xl font-bold mb-8">Hoy 👋</h1>
+				<p>
+					I'm <strong class="text-accent">Jeff Mancilla</strong>—a full-stack
+					developer and technologist based in Houston, TX.
+				</p>
+				<p>
+					Come check out some of <a href="#projects">my projects</a> and let's connect!
+				</p>
+				<div class="flex gap-2 justify-center sm:justify-start">
+					<a class="btn btn-primary" href="https://linkedin.com/in/jeffmancilla"
+						>LinkedIn</a
+					>
+					<a class="btn btn-neutral" href="https://github.com/jeffmancilla"
+						>GitHub</a
+					>
+				</div>
+			</div>
+			<div class="hero-image-container">
+				<picture>
+					<source
+						srcset="/assets/jeffm-cartoon.webp"
+						media="(min-width: 420px)"
+					/>
+					<img
+						class="hero-image"
+						alt="cartoon Jeff in East Asia"
+						src="/assets/jeffm-cartoon.webp"
+					/>
+				</picture>
+			</div>
 		</div>
-		<!-- <div class="flex flex-wrap justify-center gap-4">
-			<a href="/Jeff-Mancilla-resume.docx">
-				<Button variant="outline">
-					<FileText className="mr-2 h-4 w-4" />Resume
-				</Button>
-			</a>
-		</div> -->
-	</section>
-	<Separator />
-	<section id="projects">
-		<h2 class="text-4xl font-extrabold">Projects</h2>
-		<div class="flex flex-col gap-8">
-			<Card
-				title="Recipes (working title)"
-				app="https://exquisite-klepon-51cda7.netlify.app"
-				repo="https://github.com/jeffmancilla/recipes"
-				image="/assets/recipes.webp"
-			>
-				<div>
-					<Badge variant="outline">React</Badge>
-					<Badge variant="outline">Vite</Badge>
-					<Badge variant="outline">REST</Badge>
-				</div>
-				<p>A recipe catalog - minimally designed, fast, and easy to follow</p>
-			</Card>
-			<Card
-				title="Tender"
-				app="https://tender-f3bf64ad9858.herokuapp.com"
-				repo="https://github.com/valenium/Tinder-But-For-Restaurants"
-				image="/assets/tender.webp"
-			>
-				<div>
-					<Badge variant="outline">Express</Badge>
-					<Badge variant="outline">EJS</Badge>
-					<Badge variant="outline">REST</Badge>
-				</div>
-				<p>Find your next meal (Tinder but for restaurants)</p>
-			</Card>
-			<Card
-				title="Mid Typing"
-				app="https://jeffmancilla.github.io/mid-typing-game"
-				repo="https://github.com/jeffmancilla/mid-typing-game"
-				image="/assets/mid-typing.webp"
-			>
-				<div>
-					<Badge variant="outline">JavaScript</Badge>
-					<Badge variant="outline">CSS</Badge>
-					<Badge variant="outline">HTML</Badge>
-				</div>
-				<p>Speed typing game with a Souls-like twist</p>
-			</Card>
-		</div>
-	</section>
-	<Separator />
-	<section id="skills">
-		<h2 class="text-4xl font-extrabold">Skills</h2>
-		<ul class="flex flex-col align-center">
-			<li>React</li>
-			<li>Svelte</li>
-			<li>Astro</li>
-			<li>Typescript</li>
-			<li>Tailwind</li>
-			<li>CSS</li>
-			<li>HTML5</li>
-			<li>Python</li>
-			<li>ServiceNow</li>
-		</ul>
-	</section>
+		<Projects />
+	</div>
+</BaseLayout>
 
-	<style>
-		section {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			gap: 1rem;
-			margin-block: 2.5rem;
+<style>
+	.home-container {
+		min-height: 420px;
+		display: flex;
+		flex: 1;
+		gap: 1;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.home-copy {
+		width: min(40ch,100%);
+		& > * + * {
+			margin-top: 1rem;
 		}
-		section p {
+	}
+
+	.hero-image-container {
+		text-align: center;
+	}
+
+	.hero-image-container picture {
+		display: block;
+		min-height: 250px;
+	}
+
+	.caption {
+		font-size: 0.8em;
+		font-style: italic;
+		text-align: left;
+	}
+
+	.hero-image {
+		width: 100%;
+		max-width: 400px;
+		margin-bottom: 1em;
+	}
+
+	@media (max-width: 640px) {
+		.home-container {
+			flex-direction: column;
+		}
+
+		.home-copy {
+			flex: 0;
+			padding-bottom: 2em;
 			text-align: center;
 		}
-		h2 {
-			margin-bottom: 1rem;
-		}
-		p {
-			text-wrap: pretty;
-		}
-	</style>
-</Layout>
+	}
+</style>

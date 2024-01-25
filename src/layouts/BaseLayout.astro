@@ -1,0 +1,83 @@
+---
+import BaseHead from "../components/BaseHead.astro"
+
+export interface Props {
+	title: string
+	description: string
+	permalink: string
+	current?: string
+}
+const { title, description, permalink, current } = Astro.props
+---
+
+<html lang="en">
+	<head>
+		<BaseHead title={title} description={description} permalink={permalink} />
+	</head>
+	<body>
+		<div class="w-full h-svh flex flex-col gap-8">
+			<header
+				class="wrapper flex justify-between items-center capitalize my-4 w-full"
+			>
+				<!-- <a class={current === "" ? "selected" : ""} href="/">
+					<span>jeff m.</span>
+				</a> -->
+
+				<!-- <nav class="flex gap-4 items-center">
+					<a class={current === "about" ? "selected" : ""} href="/about">about</a>
+					<a class={current === "projects" ? "selected" : ""} href="/projects"
+						>projects</a
+					>
+				</nav> -->
+			</header>
+			<main class="wrapper flex-grow">
+				<slot />
+			</main>
+			<footer class="py-10 bg-base-200 text-base-content">
+				<div class="footer wrapper">
+					<aside class="flex gap-1 items-end">
+						<img
+							alt="JeffM Logo"
+							src="/assets/jeffm-logo.webp"
+							class="w-12 rounded-full inline-block"
+						/>
+						<div>
+							<p>
+								&copy; {new Date().getFullYear()} Jeff Mancilla
+							</p>
+							<p>
+								Built with ♥ and <a
+									href="https://astro.build"
+									target="_blank"
+									rel="noopener">Astro</a
+								>
+							</p>
+						</div>
+					</aside>
+					<nav>
+						<h6 class="footer-title">Connect</h6>
+						<a
+							href="https://linkedin.com/in/jeffmancilla"
+							class="link link-hover">LinkedIn</a
+						>
+						<a href="https://github.com/jeffmancilla" class="link link-hover"
+							>GitHub</a
+						>
+						<a
+							href="https://1drv.ms/w/s!Al_v4tpxQ4-Og8MBq4U73Bvzpd9e8g?e=ynh4Cx"
+							class="link link-hover">Resume</a
+						>
+						<a href="mailto:jeffmancilla@outlook.com" class="link link-hover"
+							>Email</a
+						>
+					</nav>
+					<nav>
+						<h6 class="footer-title">Nav</h6>
+						<a href="#top" class="link link-hover">Back to top</a>
+						<a href="#projects" class="link link-hover">Projects</a>
+					</nav>
+				</div>
+			</footer>
+		</div>
+	</body>
+</html>
