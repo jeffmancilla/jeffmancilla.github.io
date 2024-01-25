@@ -1,51 +1,69 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
+import BaseHead from "../components/BaseHead.astro"
 
 export interface Props {
-  title: string;
-  description: string;
-  permalink: string;
-  current?: string;
+	title: string
+	description: string
+	permalink: string
+	current?: string
 }
-const { title, description, permalink, current } = Astro.props;
+const { title, description, permalink, current } = Astro.props
 ---
+
 <html lang="en">
-<head>
-  <BaseHead title={title} description={description} permalink={permalink} />
-</head>
-<body>
-  <div class="layout">
-    <Header current={current} />
+	<head>
+		<BaseHead title={title} description={description} permalink={permalink} />
+	</head>
+	<body>
+		<div class="w-full h-svh flex flex-col gap-8">
+			<header class="wrapper flex justify-between items-center capitalize my-4 w-full">
+				<!-- <a class={current === "" ? "selected" : ""} href="/">
+					<span>jeff m.</span>
+				</a> -->
 
-    <main>
-      <slot />
-    </main>
-
-    <Footer />
-  </div>
-</body>
+				<!-- <nav class="flex gap-4 items-center">
+					<a class={current === "about" ? "selected" : ""} href="/about">about</a>
+					<a class={current === "projects" ? "selected" : ""} href="/projects"
+						>projects</a
+					>
+				</nav> -->
+			</header>
+			<main class="wrapper flex-grow">
+				<slot />
+			</main>
+			<footer class="footer p-10 bg-base-200 text-base-content">
+				<aside class="flex gap-1 items-end">
+					<img
+						alt="JeffM Logo"
+						src="/assets/jeffm-logo.webp"
+						class="w-12 rounded-full inline-block"
+					/>
+					<div>
+						<p>
+							&copy; {new Date().getFullYear()} Jeff Mancilla
+						</p>
+						<p>
+							Built with ♥ and <a
+								href="https://astro.build"
+								target="_blank"
+								rel="noopener">Astro</a
+							>
+						</p>
+					</div>
+				</aside>
+				<nav>
+					<h6 class="footer-title">Nav</h6>
+					<a class="link link-hover">Back to top</a>
+					<a class="link link-hover">Projects</a>
+				</nav>
+				<nav>
+					<h6 class="footer-title">Connect</h6>
+					<a class="link link-hover">LinkedIn</a>
+					<a class="link link-hover">GitHub</a>
+					<a class="link link-hover">Resume</a>
+					<a class="link link-hover">Email</a>
+				</nav>
+			</footer>
+		</div>
+	</body>
 </html>
-
-<style>
-  .layout {
-    display: flex;
-    flex-direction: column;
-    min-height: 100svh;
-    width: min(100vw, 90ch);
-    margin-inline: auto;
-  }
-
-  main {
-    flex: 1;
-    position: relative;
-    margin: 0 auto;
-    max-width: 1400px;
-    padding: 1em 2em;
-    box-sizing: border-box;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-  }
-</style>

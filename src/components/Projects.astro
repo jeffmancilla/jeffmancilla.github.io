@@ -1,0 +1,41 @@
+---
+let allPosts = await Astro.glob("../data/projects/*.md")
+allPosts = allPosts.sort(
+	(a, b) =>
+		new Date(b.frontmatter.publishDate).valueOf() -
+		new Date(a.frontmatter.publishDate).valueOf()
+)
+---
+
+<div class="flex flex-col place-items-center gap-4">
+<h2 id="projects" class="text-4xl font-extrabold mb-6">Projects</h2>
+{
+	allPosts.map((post, index) => {
+		const href = `/projects/${post.file.split("/").pop()?.split(".").shift()}`
+		return (
+			<>
+				<div class="card w-96 bg-base-100 shadow-xl">
+					<figure>
+						<img src={post.frontmatter.image} alt={post.frontmatter.title} />
+					</figure>
+					<div class="card-body">
+						<h3 class="card-title">{post.frontmatter.title}</h3>
+						<p>{post.frontmatter.description}</p>
+						<div>
+							<div class="badge badge-outline">{post.frontmatter.skills}</div>
+						</div>
+						<div class="card-actions justify-end">
+							<a class="btn btn-md btn-secondary" href={post.frontmatter.link}>
+								App
+							</a>
+							<a class="btn btn-md btn-neutral" href={post.frontmatter.github}>
+								Repo
+							</a>
+						</div>
+					</div>
+				</div>
+			</>
+		)
+	})
+}
+</div>
