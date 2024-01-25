@@ -12,18 +12,8 @@ const { title, description, permalink, current } = Astro.props
 
 <html lang="en">
 	<head>
-		<!-- Google tag (gtag.js) -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=G-MGBXTHVLRL"
-		></script>
-		<script>
-			window.dataLayer = window.dataLayer || []
-			function gtag() {
-				dataLayer.push(arguments)
-			}
-			gtag("js", new Date())
-
-			gtag("config", "G-MGBXTHVLRL")
-		</script>
+		<script type="text/partytown" async src="https://www.googletagmanager.com/gtag/js?id=MEASUREMENT_ID"></script>
+		<script type="text/partytown" src="../utils/gtag.js" />
 		<BaseHead title={title} description={description} permalink={permalink} />
 	</head>
 	<body>
