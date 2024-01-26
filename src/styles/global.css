@@ -51,6 +51,14 @@ p a:hover {
 	color: #fff;
 }
 
+ul {
+	list-style-type: circle;
+	list-style-position: inside;
+}
+li {
+	padding-left: 1rem;
+}
+
 .wrapper {
 	width: min(100% - 4rem, 75ch);
 	margin-inline: auto;

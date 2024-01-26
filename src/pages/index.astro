@@ -1,19 +1,21 @@
 ---
 import Projects from "../components/Projects.astro"
 import BaseLayout from "../layouts/BaseLayout.astro"
+// import * as aboutMe from "../data/about.md"
 
+// const { Content } = aboutMe
 const title = "Jeff Mancilla"
 const description = "Portfolio"
 const permalink = Astro.site!.href
 ---
 
 <BaseLayout title={title} description={description} permalink={permalink}>
-	<div class="flex flex-col gap-20">
+	<div class="flex flex-col gap-8">
 		<section
 			class="flex flex-1 justify-center items-center flex-col md:flex-row"
 		>
 			<div class="text-pretty text-center md:text-start">
-				<h1 class="text-6xl font-bold">Hoy 👋</h1>
+				<h1 class="text-6xl font-bold">hoy 👋🏽</h1>
 				<p class="mt-8">
 					I'm <strong class="text-accent">Jeff Mancilla</strong>—a full-stack
 					developer and technologist based in Houston, TX.
@@ -44,11 +46,17 @@ const permalink = Astro.site!.href
 				</picture>
 			</div>
 		</section>
+		<div class="text-center text-4xl text-neutral">· · · · ·</div>
 		<section>
 			<h2 id="projects" class="text-center text-4xl font-bold mb-8">
 				Projects
 			</h2>
 			<Projects />
 		</section>
+		<!-- <div class="text-center text-6xl text-neutral">· · · ·</div>
+		<section>
+			<h2 id="about" class="text-center text-4xl font-bold mb-8">About</h2>
+			<Content />
+		</section> -->
 	</div>
 </BaseLayout>

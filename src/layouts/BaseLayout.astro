@@ -28,8 +28,8 @@ const { title, description, permalink, current } = Astro.props
 		<BaseHead title={title} description={description} permalink={permalink} />
 	</head>
 	<body>
-		<div class="w-full h-svh flex flex-col gap-8">
-			<!-- <header class="wrapper flex justify-between items-center capitalize my-8">
+		<div class="w-full h-svh flex flex-col gap-4">
+			<!-- <header class="wrapper flex justify-between items-center capitalize mt-8">
 				<a class={current === "" ? "selected" : ""} href="/">
 					<span>jeff m.</span>
 				</a>
@@ -38,10 +38,13 @@ const { title, description, permalink, current } = Astro.props
 					<a class={current === "projects" ? "selected" : ""} href="/#projects"
 						>projects</a
 					>
+					<a class={current === "about" ? "selected" : ""} href="/#about"
+						>about</a
+					>
 				</nav>
 			</header> -->
 
-			<main class="mt-16 wrapper flex-grow">
+			<main class="my-16 wrapper flex-grow">
 				<slot />
 			</main>
 
@@ -76,7 +79,7 @@ const { title, description, permalink, current } = Astro.props
 							>GitHub</a
 						>
 						<a
-							href="https://1drv.ms/w/s!Al_v4tpxQ4-Og8MBq4U73Bvzpd9e8g?e=ynh4Cx"
+							href="https://docs.google.com/document/d/1QYOL7M5pZ6dbnL-Lf9R5PY2PlbNGh5H-/edit?usp=sharing&ouid=102123137355929190148&rtpof=true&sd=true"
 							class="link link-hover">Resume</a
 						>
 						<a href="mailto:jeffmancilla@outlook.com" class="link link-hover"
