@@ -9,17 +9,19 @@ const permalink = Astro.site!.href
 
 <BaseLayout title={title} description={description} permalink={permalink}>
 	<div class="flex flex-col gap-20">
-		<div class="home-container">
-			<div class="home-copy">
-				<h1 class="text-6xl font-bold mb-8">Hoy 👋</h1>
-				<p>
+		<section
+			class="flex flex-1 justify-center items-center flex-col md:flex-row"
+		>
+			<div class="text-pretty text-center md:text-start">
+				<h1 class="text-6xl font-bold">Hoy 👋</h1>
+				<p class="mt-8">
 					I'm <strong class="text-accent">Jeff Mancilla</strong>—a full-stack
 					developer and technologist based in Houston, TX.
 				</p>
-				<p>
+				<p class="mt-4">
 					Come check out some of <a href="#projects">my projects</a> and let's connect!
 				</p>
-				<div class="flex gap-2 justify-center sm:justify-start">
+				<div class="mt-8 flex gap-2 justify-center md:justify-start">
 					<a class="btn btn-primary" href="https://linkedin.com/in/jeffmancilla"
 						>LinkedIn</a
 					>
@@ -28,7 +30,7 @@ const permalink = Astro.site!.href
 					>
 				</div>
 			</div>
-			<div class="hero-image-container">
+			<div class="max-w-sm md:min-w-sm">
 				<picture>
 					<source
 						srcset="/assets/jeffm-cartoon.webp"
@@ -41,58 +43,12 @@ const permalink = Astro.site!.href
 					/>
 				</picture>
 			</div>
-		</div>
-		<Projects />
+		</section>
+		<section>
+			<h2 id="projects" class="text-center text-4xl font-bold mb-8">
+				Projects
+			</h2>
+			<Projects />
+		</section>
 	</div>
 </BaseLayout>
-
-<style>
-	.home-container {
-		min-height: 420px;
-		display: flex;
-		flex: 1;
-		gap: 1;
-		justify-content: center;
-		align-items: center;
-	}
-
-	.home-copy {
-		width: min(40ch,100%);
-		& > * + * {
-			margin-top: 1rem;
-		}
-	}
-
-	.hero-image-container {
-		text-align: center;
-	}
-
-	.hero-image-container picture {
-		display: block;
-		min-height: 250px;
-	}
-
-	.caption {
-		font-size: 0.8em;
-		font-style: italic;
-		text-align: left;
-	}
-
-	.hero-image {
-		width: 100%;
-		max-width: 400px;
-		margin-bottom: 1em;
-	}
-
-	@media (max-width: 640px) {
-		.home-container {
-			flex-direction: column;
-		}
-
-		.home-copy {
-			flex: 0;
-			padding-bottom: 2em;
-			text-align: center;
-		}
-	}
-</style>

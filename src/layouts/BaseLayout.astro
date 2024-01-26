@@ -12,30 +12,40 @@ const { title, description, permalink, current } = Astro.props
 
 <html lang="en">
 	<head>
-		<script type="text/partytown" async src="https://www.googletagmanager.com/gtag/js?id=MEASUREMENT_ID"></script>
-		<script type="text/partytown" src="/gtag.js" />
+		<script
+			type="text/partytown"
+			async
+			src="https://www.googletagmanager.com/gtag/js?id=MEASUREMENT_ID"></script>
+		<script type="text/partytown">
+			window.dataLayer = window.dataLayer || []
+			function gtag() {
+				dataLayer.push(arguments)
+			}
+			gtag("js", new Date())
+
+			gtag("config", "G-MGBXTHVLRL")
+		</script>
 		<BaseHead title={title} description={description} permalink={permalink} />
 	</head>
 	<body>
 		<div class="w-full h-svh flex flex-col gap-8">
-			<header
-				class="wrapper flex justify-between items-center capitalize my-4 w-full"
-			>
-				<!-- <a class={current === "" ? "selected" : ""} href="/">
+			<!-- <header class="wrapper flex justify-between items-center capitalize my-8">
+				<a class={current === "" ? "selected" : ""} href="/">
 					<span>jeff m.</span>
-				</a> -->
+				</a>
 
-				<!-- <nav class="flex gap-4 items-center">
-					<a class={current === "about" ? "selected" : ""} href="/about">about</a>
-					<a class={current === "projects" ? "selected" : ""} href="/projects"
+				<nav class="flex gap-4 items-center">
+					<a class={current === "projects" ? "selected" : ""} href="/#projects"
 						>projects</a
 					>
-				</nav> -->
-			</header>
-			<main class="wrapper flex-grow">
+				</nav>
+			</header> -->
+
+			<main class="mt-16 wrapper flex-grow">
 				<slot />
 			</main>
-			<footer class="py-10 bg-base-200 text-base-content">
+
+			<footer class="py-16 bg-base-200 text-base-content">
 				<div class="footer wrapper">
 					<aside class="flex gap-1 items-end">
 						<img
