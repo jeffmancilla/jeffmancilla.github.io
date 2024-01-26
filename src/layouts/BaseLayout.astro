@@ -29,18 +29,6 @@ const { title, description, permalink, current } = Astro.props
 	</head>
 	<body>
 		<div class="w-full h-svh flex flex-col gap-8">
-			<!-- <header class="wrapper flex justify-between items-center capitalize my-8">
-				<a class={current === "" ? "selected" : ""} href="/">
-					<span>jeff m.</span>
-				</a>
-
-				<nav class="flex gap-4 items-center">
-					<a class={current === "projects" ? "selected" : ""} href="/#projects"
-						>projects</a
-					>
-				</nav>
-			</header> -->
-
 			<main class="mt-16 wrapper flex-grow">
 				<slot />
 			</main>
