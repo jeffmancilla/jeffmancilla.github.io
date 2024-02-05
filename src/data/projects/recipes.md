@@ -1,7 +1,7 @@
 ---
 title: Recipes
 publishDate: Dec 22 2023
-description: A recipe catalog—minimally designed, fast, and easy to follow.
+description: A recipe catalog—minimally designed, fast, and easy to follow
 skills: [Frontend, React, Vite, REST]
 link: https://exquisite-klepon-51cda7.netlify.app/
 github: https://github.com/jeffmancilla/recipes
