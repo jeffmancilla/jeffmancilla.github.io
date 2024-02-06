@@ -52,6 +52,6 @@ p a:hover {
 }
 
 .wrapper {
-	width: min(100% - 4rem, 75ch);
+	width: min(100% - 4rem, 768px);
 	margin-inline: auto;
 }
