@@ -5,6 +5,9 @@ import BaseLayout from "../layouts/BaseLayout.astro"
 const title = "Jeff Mancilla"
 const description = "Portfolio"
 const permalink = Astro.site!.href
+
+const resume =
+	"https://docs.google.com/document/d/1R25PdCmhTGFUIarxA-cbO_18Ogfk3_vr16NOj6Y0aT8/edit?usp=sharing"
 ---
 
 <BaseLayout title={title} description={description} permalink={permalink}>
@@ -28,9 +31,7 @@ const permalink = Astro.site!.href
 					<a class="btn btn-neutral" href="https://github.com/jeffmancilla"
 						>GitHub</a
 					>
-					<a class="btn btn-outline" href="https://1drv.ms/w/s!Al_v4tpxQ4-Og8MBR9mh3Pw7-mqW6w?e=ycoCGw"
-						>Resume</a
-					>
+					<a class="btn btn-outline" href={resume}>Resume</a>
 				</div>
 			</div>
 			<div class="max-w-sm md:min-w-sm">
