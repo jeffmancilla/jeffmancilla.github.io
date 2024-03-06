@@ -1,0 +1,63 @@
+@layer reset, theme, component;
+
+@layer reset {
+	*,
+	*::before,
+	*::after {
+		box-sizing: border-box;
+	}
+	* {
+		margin: 0;
+	}
+	body {
+		line-height: 1.5;
+	}
+	img,
+	picture,
+	video,
+	canvas,
+	svg {
+		display: block;
+		max-width: 100%;
+	}
+	input,
+	button,
+	textarea,
+	select {
+		font: inherit;
+	}
+	p,
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+        font-size: 1rem;
+        font-weight: 400;
+		overflow-wrap: break-word;
+	}
+}
+@layer theme {
+	:root {
+		--color-text: Canvas;
+		--color-background: CanvasText;
+		--font-sans: system-ui, sans-serif;
+		--font-mono: ui-monospace, Consolas, monospace;
+
+		color: var(--color-text);
+		background: var(--color-background);
+
+		font-family: var(--font-sans);
+		-webkit-font-smoothing: antialiased;
+	}
+	body {
+		height: 100dvh;
+
+		display: flex;
+		flex-direction: column;
+		& > main {
+			flex-grow: 1;
+		}
+	}
+}
