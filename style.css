@@ -42,8 +42,10 @@
 	:root {
 		--color-text: Canvas;
 		--color-background: CanvasText;
+        --color-accent: cadetblue;
+
 		--font-sans: system-ui, sans-serif;
-		--font-mono: ui-monospace, Consolas, monospace;
+		--font-mono: ui-monospace, monospace;
 
 		color: var(--color-text);
 		background: var(--color-background);
@@ -53,6 +55,7 @@
 	}
 	body {
 		height: 100dvh;
+        padding: 1rem;
 
 		display: flex;
 		flex-direction: column;
