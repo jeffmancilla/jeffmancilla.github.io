@@ -1,11 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+		<!-- global -->
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="style.css" />
-        <script src="main.js" defer></script>
+		<!-- primary meta -->
 		<title>Jeff Mancilla</title>
+		<meta title="title" content="Jeff Mancilla" />
+		<meta name="description" content="Portfolio" />
+
+		<link rel="icon" type="image/" href="/code-2.svg" />
+		<link rel="stylesheet" href="/style.css" />
+		<script src="/main.js" defer></script>
 	</head>
 	<body>
 		<header>
@@ -19,27 +25,41 @@
 		</header>
 		<main>
 			<section id="hero">
-				hero
-				<p>the quick brown fox jumps over the lazy dog</p>
-				<button>LinkedIn</button>
-				<button>GitHub</button>
-				<button>Resume</button>
-                <img src="assets/jeffm-cartoon.webp" alt="cartoon Jeff">
+				<div>
+					<h2>hoy 👋🏽</h2>
+					<p>
+						I'm <mark>Jeff Mancilla</mark>	—a web developer and technologist based in Houston,
+						TX.
+					</p>
+					<p>Check out some of my projects and let's connect!</p>
+					<button class="primary">LinkedIn</button>
+					<button class="secondary">GitHub</button>
+					<button class="outline secondary">Resume</button>
+					<img src="assets/jeffm-cartoon.webp" alt="cartoon Jeff" />
+				</div>
 			</section>
-			<section id="projects"><h2>Projects</h2></section>
-			<section id="about"><h2>About</h2></section>
+			<section id="projects"></section>
+			<section id="about">
+			</section>
 		</main>
 		<footer>
-			<p>© 2024 Jeff Mancilla Built with ♥ and without a framework 😅</p>
+			<p>© 2024 Jeff Mancilla Built with ♥ and zero frameworks 😅</p>
 			<nav>
-				<li>LinkedIn</li>
-				<li>GitHub</li>
-				<li>Resume</li>
-				<li>Email</li>
+				<span role="heading" aria-level="2">Contact</span>
+				<ul>
+					<li>LinkedIn</li>
+					<li>GitHub</li>
+					<li>Resume</li>
+					<li>Email</li>
+				</ul>
 			</nav>
 			<nav>
-				<li>Projects</li>
-				<li>About</li>
+				<span role="heading" aria-level="2">Nav</span>
+				<ul>
+					<li>Projects</li>
+					<li>About</li>
+					<li>Back to top</li>
+				</ul>
 			</nav>
 		</footer>
 	</body>
