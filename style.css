@@ -1,6 +1,5 @@
-@import "pico.min.css" layer(theme);
-
-@layer theme, component, pico;
+@import "pico.min.css" layer;
+@layer pico, theme, component;
 
 /* @layer reset {
 	*,
@@ -97,5 +96,50 @@
 		& > main {
 			flex-grow: 1;
 		}
+	}
+
+	button {
+		padding-block: 0.5rem;
+	}
+}
+
+@layer component {
+	.box-primary {
+		color: var(--pico-primary-inverse);
+		background: var(--pico-primary-background);
+		border: 1px solid var(--pico-primary-underline);
+
+		width: 4rem;
+		height: 4rem;
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		&:hover {
+			background: var(--pico-primary-hover-background);
+		}
+	}
+	ul.badge-list {
+		display: flex;
+		gap: .5rem;
+		
+		padding: 0;
+		& > li {
+			font-size: .875rem;
+			font-weight: 600;
+
+			border-radius: .125rem;
+			padding-inline: .25rem;
+		}
+	}
+	article.project {
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: column;
+		& * {
+			border: 1px solid red;
+		}
+		width: 320px;
 	}
 }
