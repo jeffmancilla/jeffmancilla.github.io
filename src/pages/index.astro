@@ -1,7 +1,62 @@
 ---
+import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
+import jeffCartoon from "../images/jeffm-cartoon.webp";
 ---
 
 <Layout>
-    <h1>hello world</h1>
+    <section id="about">
+        <div>
+            <div>hoy 👋🏽</div>
+            <p>
+                I'm <h1>Jeff Mancilla</h1>—a web developer and technologist
+                based in Houston, Texas.
+            </p>
+            <p>
+                Come check out some of <a href="#projects">my projects</a> and lets
+                connect!
+            </p>
+                <button class="button elevated">LinkedIn</button>
+                <button class="button">GitHub</button>
+                <button class="button">Resume</button>
+        </div>
+        <Image
+            class="hero-image"
+            src={jeffCartoon}
+            alt="cartoon Jeff"
+            width="360"
+        />
+    </section>
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="card elevated">
+            <hgroup>
+                <p>Overline</p>
+                <h2 class="h3">Headline</h2>
+                <p>Subhead</p>
+            </hgroup>
+            <div class="content">
+                Explain more about the topic shown in the headline and subhead
+                through supporting text.
+            </div>
+            <div class="actions">
+                <button class="button">Share</button>
+                <button class="button">Learn more</button>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        section#about {
+            display: flex;
+
+            p:first-of-type {
+                display: inline;
+            }
+            & h1 {
+                font-size: 1rem;
+                display: contents;
+            }
+        }
+    </style>
 </Layout>

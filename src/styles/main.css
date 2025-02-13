@@ -25,12 +25,12 @@
 * Components are divided into two categories - if they are stand-alone (base) or if they have dependencies (has-deps).
 */
 /*** Base components (no dependencies)  */
-/* @import "./actions/button.css"; */
+@import "./actions/button.css";
 /* @import "./actions/icon-button.css"; */
 /* @import "./actions/toggle-button-group.css"; */
 /* @import "./data-display/avatar.css"; */
 /* @import "./data-display/badge.css";// */
-/* @import "./data-display/card.css"; */
+@import "./data-display/card.css";
 /* @import "./data-display/chip.css"; */
 /* @import "./data-display/definition-list.css"; */
 /* @import "./data-display/divider.css"; */
