@@ -1,0 +1,40 @@
+---
+
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Astro</title>
+	</head>
+	<body>
+		<header>
+			<h1>Jeff Mancilla</h1>
+		</header>
+		<main>the quick brown fox jumps over the lazy dog</main>
+		<footer>footer stuff</footer>
+	</body>
+</html>
+
+<style is:global>
+	@layer reset, style, layout;
+
+	@layer reset {
+	}
+
+	@layer style {
+		body {
+			color: Canvas;
+			background-color: CanvasText;
+		}
+	}
+
+	@layer layout {
+		* {
+			border: 1px dotted green;
+		}
+	}
+</style>
